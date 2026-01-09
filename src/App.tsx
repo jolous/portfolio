@@ -335,6 +335,27 @@ export default function App() {
                 </a>
               </div>
             </Card>
+            <div className="education-publications" id="publicationsSection">
+              <h2>Publications</h2>
+              <Card
+                title="Research publications"
+                subtitle="Research output snapshot"
+                className="publication-card"
+              >
+                <p>
+                  <strong>9 research papers</strong> and <strong>over 80 citations</strong>
+                </p>
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="papers"
+                  className="hover-target"
+                >
+                  View publications
+                </a>
+              </Card>
+            </div>
           </section>
         </div>
       </div>
