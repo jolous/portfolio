@@ -347,7 +347,7 @@ export default function App() {
           <section className="publications-section">
             <div>
               <h3 style={{ fontWeight: 400 }}>
-                <strong>9 research papers</strong> and <strong>over 80 citations</strong>
+                <strong>10 research papers</strong> and <strong>over 125 citations</strong>
               </h3>
               <li>
                 <a
