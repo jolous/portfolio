@@ -265,7 +265,7 @@ export default function App() {
         </ul>
       </nav>
 
-      <section id="home" className="home-section">
+      <section id="home" className="home-section section container">
         <div className="home-linkdin">
           <a
             href="https://www.linkedin.com/in/ehsan-jolous-jamshidi-19a2b6146/"
@@ -301,14 +301,14 @@ export default function App() {
         </div>
       </section>
 
-      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
-        <div className="titles" id="educationSection">
+      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }} className="section">
+        <div className="titles container" id="educationSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             EDUCATION
           </h1>
         </div>
         <div className="education-section-div">
-          <section className="education-section">
+          <section className="education-section container">
             <div>
               <h3>Doctor of Philosophy (Environmental Technology)</h3>
               <p>
@@ -338,13 +338,13 @@ export default function App() {
           </section>
         </div>
 
-        <div className="titles" id="publicationsSection">
+        <div className="titles container" id="publicationsSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             PUBLICATIONS
           </h1>
         </div>
         <div className="publications-section-div">
-          <section className="publications-section">
+          <section className="publications-section container">
             <div>
               <h3 style={{ fontWeight: 400 }}>
                 <strong>9 research papers</strong> and <strong>over 80 citations</strong>
@@ -365,13 +365,13 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="skillSection">
+      <div className="titles container" id="skillSection">
         <h1 className="separator" style={{ fontWeight: 400 }}>
           SKILLS
         </h1>
       </div>
-      <div className="skill-section-div">
-        <section className="skill-section">
+      <div className="skill-section-div section">
+        <section className="skill-section container">
           <div className="skill-chart" style={{ zIndex: -999 }}>
             <canvas id="marksChart" ref={canvasRef}></canvas>
           </div>
@@ -392,15 +392,15 @@ export default function App() {
         </section>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(245, 247, 252, 0.5)' }}>
-        <div className="titles" id="workSection">
+      <div style={{ backgroundColor: 'rgba(245, 247, 252, 0.5)' }} className="section">
+        <div className="titles container" id="workSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             WORK EXPERIENCE
           </h1>
         </div>
 
         <div className="work-section-div">
-          <section className="work-section">
+          <section className="work-section container">
             <div>
               <h3>PhD Researcher / Project-Based Contributor</h3>
               <p>
@@ -537,13 +537,13 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="volunteerSection">
+      <div className="titles container" id="volunteerSection">
         <h1 className="separator" style={{ fontWeight: 400 }}>
           VOLUNTEER
         </h1>
       </div>
-      <div className="work-section-div">
-        <section className="work-section">
+      <div className="work-section-div section">
+        <section className="work-section container">
           <div>
             <h3>Hardware &amp; Software Specialist</h3>
             <p>
@@ -565,14 +565,14 @@ export default function App() {
         </section>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(250, 252, 245, 0.5)' }}>
-        <div className="titles">
+      <div style={{ backgroundColor: 'rgba(250, 252, 245, 0.5)' }} className="section">
+        <div className="titles container">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             FREELANCE
           </h1>
         </div>
         <div className="work-section-div">
-          <section className="work-section">
+          <section className="work-section container">
             <div>
               <ul>
                 <li>
@@ -616,13 +616,13 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="demoGallerySection">
+      <div className="titles container" id="demoGallerySection">
         <h1 className="separator" style={{ fontWeight: 400 }}>
           DEMO GALLERY
         </h1>
       </div>
-      <div className="work-section-div">
-        <section className="work-section">
+      <div className="work-section-div section">
+        <section className="work-section container">
           <div>
             <ul>
               <p>
@@ -705,14 +705,14 @@ export default function App() {
         </section>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
-        <div className="titles" id="activitiesSection">
+      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }} className="section">
+        <div className="titles container" id="activitiesSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             ACHIEVEMENTS
           </h1>
         </div>
         <div className="education-section-div">
-          <section className="education-section">
+          <section className="education-section container">
             <div>
               <h3>Competitor Achievements</h3>
               <ul>
@@ -744,13 +744,13 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="certificatesSection">
+      <div className="titles container" id="certificatesSection">
         <h1 className="separator" style={{ fontWeight: 400 }}>
           CERTIFICATES
         </h1>
       </div>
-      <div className="work-section-div">
-        <section className="work-section">
+      <div className="work-section-div section">
+        <section className="work-section container">
           <div>
             <ul>
               <li>
@@ -805,8 +805,8 @@ export default function App() {
         </section>
       </div>
 
-      <div className="Copyright-section-div">
-        <section className="Copyright-section">
+      <div className="Copyright-section-div section">
+        <section className="Copyright-section container">
           <p>Copyright © 2025 Ehsan Jolous Jamshidi. All Rights Reserved</p>
         </section>
       </div>
