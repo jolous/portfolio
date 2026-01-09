@@ -622,6 +622,85 @@ nav h1 {
 	font-weight: 600;
 }
 
+.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-5);
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	left: 18px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: rgba(5, 16, 52, 0.12);
+}
+
+.timeline-item {
+	position: relative;
+	display: flex;
+}
+
+.timeline-marker {
+	position: absolute;
+	left: 9px;
+	top: 24px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: var(--accent);
+	box-shadow: 0 0 0 4px rgba(5, 16, 52, 0.08);
+}
+
+.timeline-content {
+	margin-left: var(--space-7);
+	background: #ffffff;
+	padding: var(--space-5);
+	border-radius: var(--roundMD);
+	border: 1px solid rgba(5, 16, 52, 0.08);
+	box-shadow: 0 12px 30px rgba(5, 16, 52, 0.08);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.timeline-title {
+	margin: 0;
+	font-size: var(--font-size-lg);
+	font-weight: var(--semiBold);
+}
+
+.timeline-subtitle {
+	margin: 0;
+	color: var(--secondaryText);
+	font-size: var(--font-size-sm);
+}
+
+.timeline-time,
+.timeline-body {
+	margin: 0;
+	font-size: var(--font-size-sm);
+}
+
+.timeline a {
+	color: black;
+	text-underline-position: under;
+	font-weight: 600;
+	width: fit-content;
+}
+
+.papers-summary {
+	margin-top: var(--space-4);
+	font-size: var(--font-size-md);
+	text-align: center;
+}
+
 
 
 /* SKILL SECTION */
@@ -807,6 +886,18 @@ nav h1 {
   .skill-links li {
     justify-content: center;
   }
+
+.timeline::before {
+	left: 12px;
+}
+
+.timeline-marker {
+	left: 4px;
+}
+
+.timeline-content {
+	margin-left: var(--space-6);
+}
 
 .education-section-div div {
 	clear: both;
