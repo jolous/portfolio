@@ -288,6 +288,63 @@ p {
 	color: var(--secondaryText);
 }
 
+.timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-6);
+}
+
+.timeline-item {
+	display: grid;
+	grid-template-columns: minmax(120px, 160px) 24px 1fr;
+	column-gap: var(--space-4);
+	align-items: start;
+}
+
+.timeline-date {
+	font-size: var(--font-size-sm);
+	color: var(--secondaryText);
+	text-align: right;
+	padding-top: var(--space-1);
+}
+
+.timeline-marker {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	min-height: 100%;
+}
+
+.timeline-marker::before {
+	content: '';
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--text);
+	border: 3px solid #ffffff;
+	box-shadow: 0 0 0 2px rgba(5, 16, 52, 0.15);
+}
+
+.timeline-marker::after {
+	content: '';
+	position: absolute;
+	top: 18px;
+	bottom: calc(var(--space-6) * -1);
+	width: 2px;
+	background: rgba(5, 16, 52, 0.2);
+}
+
+.timeline-item--last .timeline-marker::after {
+	display: none;
+}
+
+.timeline-content {
+	width: 100%;
+}
+
 /**********************************************************/
 
 
@@ -808,33 +865,56 @@ nav h1 {
     justify-content: center;
   }
 
-.education-section-div div {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    position: relative;
+    padding-left: var(--space-6);
+    row-gap: var(--space-3);
+  }
+
+  .timeline-date {
+    text-align: left;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: var(--space-2);
+    height: calc(100% - var(--space-2));
+  }
+
+  .timeline-marker::after {
+    top: 14px;
+    bottom: calc(var(--space-5) * -1);
+  }
+
+  .education-section-div .card {
 	clear: both;
 	width: 90%;
 	padding: var(--space-3) var(--space-5);
 	margin: 0 auto;
 }
 
-.publications-section-div div {
+  .publications-section-div div {
 	clear: both;
 	width: 90%;
 	padding: var(--space-3) var(--space-5);
 	margin: 0 auto;
 }
 
-  .work-section-div div {
+  .work-section-div .card {
 	clear: both;
 	width: 90%;
 	padding: var(--space-3) var(--space-5);
 	margin: 0 auto;
 }
 
-.work-section-div img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+  .work-section-div img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 
 
 }
