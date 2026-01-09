@@ -313,25 +313,71 @@ export default function App() {
         </div>
         <div className="education-section-div">
           <section className="education-section container">
-            <Card
-              className="education-card"
-            >
-              <Timeline items={educationItems} className="timeline--centered timeline--education" />
-              <div className="education-publications" id="publicationsSection">
-                <p>
-                  <strong>10 research papers</strong> and <strong>over 125 citations</strong>
+            <div className="education-intro">
+              <div>
+                <p className="education-lead">
+                  A learning journey built around environmental innovation, data-driven strategy,
+                  and engineering fundamentals.
                 </p>
-                <a
-                  href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
-                  target="_blank"
-                  rel="noreferrer"
-                  id="papers"
-                  className="publication-button hover-target"
-                >
-                  View publications
-                </a>
+                <div className="education-tags">
+                  <span>AI + Sustainability</span>
+                  <span>Advanced Analytics</span>
+                  <span>Hardware Systems</span>
+                </div>
               </div>
-            </Card>
+              <div className="education-metrics">
+                <div className="education-metric">
+                  <p className="education-metric__value">10</p>
+                  <p className="education-metric__label">Research Papers</p>
+                </div>
+                <div className="education-metric">
+                  <p className="education-metric__value">125+</p>
+                  <p className="education-metric__label">Citations</p>
+                </div>
+                <div className="education-metric">
+                  <p className="education-metric__value">3</p>
+                  <p className="education-metric__label">Degrees</p>
+                </div>
+              </div>
+            </div>
+            <div className="education-grid">
+              <Card className="education-card education-card--timeline">
+                <div className="education-card__header">
+                  <div>
+                    <h2>Academic timeline</h2>
+                    <p>Key milestones that shaped my multidisciplinary focus.</p>
+                  </div>
+                  <div className="education-card__badge">2011 → Present</div>
+                </div>
+                <Timeline items={educationItems} className="timeline--centered timeline--education" />
+              </Card>
+              <div className="education-side">
+                <Card className="education-card education-card--focus">
+                  <h3>Current research focus</h3>
+                  <ul className="education-focus">
+                    <li>AI-guided energy optimization for smart infrastructure.</li>
+                    <li>Data ecosystems for environmental resilience planning.</li>
+                    <li>Automation workflows that connect sensors to insights.</li>
+                  </ul>
+                </Card>
+                <Card className="education-card education-card--publications" id="publicationsSection">
+                  <h3>Research footprint</h3>
+                  <p>
+                    Publishing across environmental technology, analytics, and automation to
+                    accelerate sustainable decisions.
+                  </p>
+                  <a
+                    href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                    target="_blank"
+                    rel="noreferrer"
+                    id="papers"
+                    className="publication-button hover-target"
+                  >
+                    View publications
+                  </a>
+                </Card>
+              </div>
+            </div>
           </section>
         </div>
       </div>
