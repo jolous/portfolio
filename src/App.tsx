@@ -313,8 +313,27 @@ export default function App() {
         </div>
         <div className="education-section-div">
           <section className="education-section container">
-            <Card title="Education timeline" subtitle="Most recent first" className="education-card">
+            <Card
+              title="Education &amp; publications"
+              subtitle="Academic timeline and research output"
+              className="education-card"
+            >
               <Timeline items={educationItems} className="timeline--centered" />
+              <div className="education-publications" id="publicationsSection">
+                <h3>Publications</h3>
+                <p>
+                  <strong>9 research papers</strong> and <strong>over 80 citations</strong>
+                </p>
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="papers"
+                  className="publication-button hover-target"
+                >
+                  View publications
+                </a>
+              </div>
             </Card>
             <div className="education-publications" id="publicationsSection">
               <h2>Publications</h2>

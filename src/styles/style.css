@@ -315,14 +315,17 @@ p {
 	flex-direction: column;
 	gap: var(--space-2);
 	min-height: 100%;
+	width: 100%;
 }
 
 .timeline-side--left {
 	align-items: flex-end;
+	padding-right: var(--space-3);
 }
 
 .timeline-side--right {
 	align-items: flex-start;
+	padding-left: var(--space-3);
 }
 
 .timeline-item--left .timeline-side--left {
@@ -385,7 +388,7 @@ p {
 }
 
 .timeline-entry {
-	max-width: 320px;
+	max-width: 280px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -394,7 +397,7 @@ p {
 
 .timeline-title {
 	margin: 0;
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-sm);
 	font-weight: var(--semiBold);
 }
 
@@ -428,6 +431,8 @@ p {
 
 .timeline--centered {
 	width: 100%;
+	max-width: 820px;
+	margin: 0 auto;
 }
 
 .education-publications {
@@ -436,25 +441,39 @@ p {
 	align-items: center;
 	gap: var(--space-4);
 	text-align: center;
+	border-top: 1px solid rgba(5, 16, 52, 0.12);
+	margin-top: var(--space-6);
+	padding-top: var(--space-5);
 }
 
-.education-publications h2 {
+.education-publications h3 {
+	margin-bottom: 0;
+	font-size: var(--font-size-md);
+	font-weight: var(--semiBold);
+}
+
+.education-publications p {
 	margin-bottom: 0;
 }
 
-.publication-card {
-	max-width: 420px;
-	width: 100%;
-	text-align: center;
-}
-
-.publication-card .card__body {
-	align-items: center;
-}
-
-.publication-card a {
+.publication-button {
 	display: inline-flex;
-	margin-top: var(--space-2);
+	align-items: center;
+	justify-content: center;
+	padding: 0.65rem 1.75rem;
+	border-radius: 999px;
+	border: 2px solid var(--text);
+	background: var(--text);
+	color: #fff;
+	text-decoration: none;
+	font-size: var(--font-size-sm);
+	font-weight: var(--semiBold);
+	letter-spacing: 0.02em;
+}
+
+.publication-button:hover {
+	background: transparent;
+	color: var(--text);
 }
 
 /**********************************************************/
@@ -991,6 +1010,11 @@ nav h1 {
   .timeline-item--left .timeline-side--right,
   .timeline-item--right .timeline-side--right {
     align-items: flex-start;
+  }
+
+  .timeline-side--left,
+  .timeline-side--right {
+    padding: 0;
   }
 
   .timeline-date {
