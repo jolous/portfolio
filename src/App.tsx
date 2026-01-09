@@ -313,31 +313,30 @@ export default function App() {
         </div>
         <div className="education-section-div">
           <section className="education-section container">
-            <Timeline items={educationItems} />
-          </section>
-        </div>
-
-        <div className="titles container" id="publicationsSection">
-          <h1 className="separator" style={{ fontWeight: 400 }}>
-            PUBLICATIONS
-          </h1>
-        </div>
-        <div className="publications-section-div">
-          <section className="publications-section container section-content">
-            <Card title="Research publications" subtitle="Google Scholar profile">
-              <p>
-                <strong>9 research papers</strong> and <strong>over 80 citations</strong>
-              </p>
-              <a
-                href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
-                target="_blank"
-                rel="noreferrer"
-                id="papers"
-                className="hover-target"
-              >
-                View publications on Google scholar
-              </a>
+            <Card title="Education timeline" subtitle="Most recent first" className="education-card">
+              <Timeline items={educationItems} className="timeline--centered" />
             </Card>
+            <div className="education-publications" id="publicationsSection">
+              <h2>Publications</h2>
+              <Card
+                title="Research publications"
+                subtitle="Research output snapshot"
+                className="publication-card"
+              >
+                <p>
+                  <strong>9 research papers</strong> and <strong>over 80 citations</strong>
+                </p>
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="papers"
+                  className="hover-target"
+                >
+                  View publications
+                </a>
+              </Card>
+            </div>
           </section>
         </div>
       </div>
