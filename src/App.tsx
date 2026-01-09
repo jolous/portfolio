@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 import TextScramble from './utils/textScramble';
 import { skillOrder, skills, type SkillKey, type SkillLabel } from './data/skills';
+import Card from './components/Card';
 
 const phrases = ['Data Scientist', 'Web Developer', 'Programmer', 'Photographer'];
 
@@ -308,33 +309,25 @@ export default function App() {
           </h1>
         </div>
         <div className="education-section-div">
-          <section className="education-section container">
-            <div>
-              <h3>Doctor of Philosophy (Environmental Technology)</h3>
-              <p>
-                Universiti Sains Malaysia, Penang, Malaysia
-                <br />
-                2021 - Present
-              </p>
-            </div>
-
-            <div>
-              <h3>Master of Data Science &amp; Analytics</h3>
-              <p>
-                Universiti Sains Malaysia, Penang, Malaysia
-                <br />
-                2018 - 2020
-              </p>
-            </div>
-
-            <div>
-              <h3>Bachelor of Computer Engineering Technology-Hardware</h3>
-              <p>
-                Khayyam University, Mashhad, Iran
-                <br />
-                2008 - 2011
-              </p>
-            </div>
+          <section className="education-section container section-content">
+            <Card
+              title="Doctor of Philosophy (Environmental Technology)"
+              subtitle="Universiti Sains Malaysia, Penang, Malaysia"
+            >
+              <p>2021 - Present</p>
+            </Card>
+            <Card
+              title="Master of Data Science &amp; Analytics"
+              subtitle="Universiti Sains Malaysia, Penang, Malaysia"
+            >
+              <p>2018 - 2020</p>
+            </Card>
+            <Card
+              title="Bachelor of Computer Engineering Technology-Hardware"
+              subtitle="Khayyam University, Mashhad, Iran"
+            >
+              <p>2008 - 2011</p>
+            </Card>
           </section>
         </div>
 
@@ -344,23 +337,21 @@ export default function App() {
           </h1>
         </div>
         <div className="publications-section-div">
-          <section className="publications-section container">
-            <div>
-              <h3 style={{ fontWeight: 400 }}>
+          <section className="publications-section container section-content">
+            <Card title="Research publications" subtitle="Google Scholar profile">
+              <p>
                 <strong>9 research papers</strong> and <strong>over 80 citations</strong>
-              </h3>
-              <li>
-                <a
-                  href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
-                  target="_blank"
-                  rel="noreferrer"
-                  id="papers"
-                  className="hover-target"
-                >
-                  View publications on Google scholar
-                </a>
-              </li>
-            </div>
+              </p>
+              <a
+                href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                target="_blank"
+                rel="noreferrer"
+                id="papers"
+                className="hover-target"
+              >
+                View publications on Google scholar
+              </a>
+            </Card>
           </section>
         </div>
       </div>
@@ -371,24 +362,27 @@ export default function App() {
         </h1>
       </div>
       <div className="skill-section-div section">
-        <section className="skill-section container">
-          <div className="skill-chart" style={{ zIndex: -999 }}>
-            <canvas id="marksChart" ref={canvasRef}></canvas>
-          </div>
-
-          <ul className="skill-links">
-            {skillLabels.map(skill => (
-              <li
-                key={skill.key}
-                id={skill.key}
-                onClick={() => setActiveSkill(skill.key)}
-                style={{ fontWeight: skill.key === activeSkill ? 'bold' : 400 }}
-                className="hover-target"
-              >
-                {skill.label}
-              </li>
-            ))}
-          </ul>
+        <section className="skill-section container card-grid">
+          <Card title="Skill radar" subtitle="Visual overview of the highlighted capability">
+            <div className="skill-chart" style={{ zIndex: -999 }}>
+              <canvas id="marksChart" ref={canvasRef}></canvas>
+            </div>
+          </Card>
+          <Card title="Skill categories" subtitle="Select a category to update the chart">
+            <ul className="skill-links">
+              {skillLabels.map(skill => (
+                <li
+                  key={skill.key}
+                  id={skill.key}
+                  onClick={() => setActiveSkill(skill.key)}
+                  style={{ fontWeight: skill.key === activeSkill ? 'bold' : 400 }}
+                  className="hover-target"
+                >
+                  {skill.label}
+                </li>
+              ))}
+            </ul>
+          </Card>
         </section>
       </div>
 
@@ -400,15 +394,11 @@ export default function App() {
         </div>
 
         <div className="work-section-div">
-          <section className="work-section container">
-            <div>
-              <h3>PhD Researcher / Project-Based Contributor</h3>
-              <p>
-                Universiti Sains Malaysia, Penang, Malaysia
-                <br />
-                Jan. 2020 – Present
-              </p>
-              <br />
+          <section className="work-section container section-content">
+            <Card
+              title="PhD Researcher / Project-Based Contributor"
+              subtitle="Universiti Sains Malaysia, Penang, Malaysia · Jan. 2020 – Present"
+            >
               <p>
                 <strong>Main PhD Research:</strong> Oil Palm Yield Prediction using Machine Learning
                 and Deep Learning techniques.
@@ -417,10 +407,8 @@ export default function App() {
                 Performed oil palm tree detection from drone images using YOLOv5 and Amazon
                 Rekognition.
               </p>
-              <br />
               <p>
-                <strong>Additional Project Contributions (under supervisor’s external
-                collaborations):</strong>
+                <strong>Additional Project Contributions (under supervisor’s external collaborations):</strong>
               </p>
               <ul>
                 <li>
@@ -471,27 +459,24 @@ export default function App() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </Card>
 
-            <div>
-              <h3>IoT Systems Engineer</h3>
-              <a
-                href="https://www.youtube.com/shorts/NAvs-EaTwQw"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="bms"
-                className="hover-target"
-              >
-                product demo
-              </a>
-              <p>
-                Cyan System, Mashhad, Iran
-                <br />
-                Sep 2015 – Aug 2017
-              </p>
-              <br />
+            <Card
+              title="IoT Systems Engineer"
+              subtitle="Cyan System, Mashhad, Iran · Sep 2015 – Aug 2017"
+              footer={
+                <a
+                  href="https://www.youtube.com/shorts/NAvs-EaTwQw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="bms"
+                  className="hover-target"
+                >
+                  product demo
+                </a>
+              }
+            >
               <p>Co-founded a start-up to develop a wireless building management system</p>
-
               <ul>
                 <li>Designed and built a mobile app using PhoneGap.</li>
                 <li>
@@ -500,16 +485,12 @@ export default function App() {
                 </li>
                 <li>Programmed AVR microcontrollers and integrated various sensors.</li>
               </ul>
-            </div>
+            </Card>
 
-            <div>
-              <h3>Information Technology Help Desk</h3>
-              <p>
-                Rhine Engineering Pvt. Ltd., Tehran, Iran
-                <br />
-                Aug 2012 – Sep 2015
-              </p>
-              <br />
+            <Card
+              title="Information Technology Help Desk"
+              subtitle="Rhine Engineering Pvt. Ltd., Tehran, Iran · Aug 2012 – Sep 2015"
+            >
               <ul>
                 <li>Designed and maintained the company website.</li>
                 <li>Monitored and supported computer systems and network infrastructure.</li>
@@ -518,21 +499,14 @@ export default function App() {
                   staff on their use.
                 </li>
               </ul>
-            </div>
+            </Card>
 
-            <div>
-              <h3>Robotic Tutor</h3>
-              <p>
-                Khayyam University, Mashhad, Iran
-                <br />
-                Apr. 2011 - Jan. 2012
-              </p>
-              <br />
+            <Card title="Robotic Tutor" subtitle="Khayyam University, Mashhad, Iran · Apr. 2011 - Jan. 2012">
               <ul>
                 <li>Instructed a small group of students in core robotics engineering principles.</li>
                 <li>Coached and mentored students for robotics competitions.</li>
               </ul>
-            </div>
+            </Card>
           </section>
         </div>
       </div>
@@ -543,14 +517,11 @@ export default function App() {
         </h1>
       </div>
       <div className="work-section-div section">
-        <section className="work-section container">
-          <div>
-            <h3>Hardware &amp; Software Specialist</h3>
-            <p>
-              Penang Science Cluster, Penang, Malaysia
-              <br />
-              Mar 2019 – Jan 2020
-            </p>
+        <section className="work-section container section-content">
+          <Card
+            title="Hardware &amp; Software Specialist"
+            subtitle="Penang Science Cluster, Penang, Malaysia · Mar 2019 – Jan 2020"
+          >
             <ul>
               <li>Developed an Android app for volunteer event registration using QR-code scanning.</li>
               <li>
@@ -561,7 +532,7 @@ export default function App() {
               <li>Integrated and configured fingerprint sensor modules for attendee verification.</li>
               <li>Mentored students in various PSC-hosted competitions.</li>
             </ul>
-          </div>
+          </Card>
         </section>
       </div>
 
@@ -572,8 +543,8 @@ export default function App() {
           </h1>
         </div>
         <div className="work-section-div">
-          <section className="work-section container">
-            <div>
+          <section className="work-section container section-content">
+            <Card title="Freelance portfolio" subtitle="Selected client and personal projects">
               <ul>
                 <li>
                   <a
@@ -611,7 +582,7 @@ export default function App() {
                 <li>Graphic design projects.</li>
                 <li>Embedded hardware, robotics, and application development.</li>
               </ul>
-            </div>
+            </Card>
           </section>
         </div>
       </div>
@@ -622,86 +593,79 @@ export default function App() {
         </h1>
       </div>
       <div className="work-section-div section">
-        <section className="work-section container">
-          <div>
-            <ul>
-              <p>
-                Daily-updated and interactive visualization of parameters measured for the
-                atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies
-                (CEMACS) USM.
-              </p>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <img
-                  src="/images/demo/atmosfera.png"
-                  alt="CEMACS Interactive Visualization"
-                  style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
-                />
-              </div>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <span id="animated-link">
-                  <a
-                    href="https://atmosfera.usm.my/visualization.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="vizOverview"
-                    className="hover-target"
-                  >
-                    View Daily-Updated Interactive Visualizations<span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </a>
-                </span>
-              </div>
-
-              <br />
-              <br />
-
-              <p>
-                An interactive Plotly sunburst chart mapping IPCC methane emission factors across
-                Malaysia built for Environmental Defense Fund (EDF).
-              </p>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <img
-                  src="/images/demo/sunburst.png"
-                  alt="CEMACS Interactive Visualization"
-                  style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
-                />
-              </div>
-
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <span id="animated-link">
-                  <a
-                    href="/demo/sunburst_plot.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="sunburstDemo"
-                    className="hover-target"
-                  >
-                    View Interactive Sunburst Chart<span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </a>
-                </span>
-              </div>
-
-              <br />
-              <br />
-
-              <p>Oil palm tree detection showcase using YOLOv5 on recorded drone video.</p>
-              <div style={{ textAlign: 'center' }}>
-                <video
-                  controls
-                  poster="/images/demo/oilpalm_detection.png"
-                  style={{ maxWidth: '100%', width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+        <section className="work-section container section-content">
+          <Card title="CEMACS visualization" subtitle="Daily-updated atmosphere/coastal monitoring">
+            <p>
+              Daily-updated and interactive visualization of parameters measured for the
+              atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies
+              (CEMACS) USM.
+            </p>
+            <div style={{ display: 'block', textAlign: 'center' }}>
+              <img
+                src="/images/demo/atmosfera.png"
+                alt="CEMACS Interactive Visualization"
+                style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
+              />
+            </div>
+            <div style={{ display: 'block', textAlign: 'center' }}>
+              <span id="animated-link">
+                <a
+                  href="https://atmosfera.usm.my/visualization.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="vizOverview"
+                  className="hover-target"
                 >
-                  <source src="/images/demo/oilpalm_detection.mp4" type="video/mp4" />
-                  Your browser does not support HTML5 video.
-                </video>
-              </div>
-            </ul>
-          </div>
+                  View Daily-Updated Interactive Visualizations<span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </span>
+            </div>
+          </Card>
+          <Card title="EDF sunburst chart" subtitle="IPCC methane emission factors for Malaysia">
+            <p>
+              An interactive Plotly sunburst chart mapping IPCC methane emission factors across
+              Malaysia built for Environmental Defense Fund (EDF).
+            </p>
+            <div style={{ display: 'block', textAlign: 'center' }}>
+              <img
+                src="/images/demo/sunburst.png"
+                alt="EDF Sunburst Visualization"
+                style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
+              />
+            </div>
+            <div style={{ display: 'block', textAlign: 'center' }}>
+              <span id="animated-link">
+                <a
+                  href="/demo/sunburst_plot.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  id="sunburstDemo"
+                  className="hover-target"
+                >
+                  View Interactive Sunburst Chart<span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </span>
+            </div>
+          </Card>
+          <Card title="YOLOv5 detection demo" subtitle="Oil palm tree detection video">
+            <p>Oil palm tree detection showcase using YOLOv5 on recorded drone video.</p>
+            <div style={{ textAlign: 'center' }}>
+              <video
+                controls
+                poster="/images/demo/oilpalm_detection.png"
+                style={{ maxWidth: '100%', width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+              >
+                <source src="/images/demo/oilpalm_detection.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </Card>
         </section>
       </div>
 
@@ -712,9 +676,8 @@ export default function App() {
           </h1>
         </div>
         <div className="education-section-div">
-          <section className="education-section container">
-            <div>
-              <h3>Competitor Achievements</h3>
+          <section className="education-section container section-content">
+            <Card title="Competitor achievements" subtitle="Robotics competitions">
               <ul>
                 <li>
                   <strong>2009 (Mashhad)</strong>: 1st place, ARC Cup Provincial Robotics
@@ -727,9 +690,8 @@ export default function App() {
                   Kabir University
                 </li>
               </ul>
-            </div>
-            <div>
-              <h3>Team &amp; Leadership Roles</h3>
+            </Card>
+            <Card title="Team &amp; leadership roles" subtitle="Technical mentorship and judging">
               <ul>
                 <li>
                   <strong>2010–2011 (Mashhad)</strong>: Team Member, Khayam University Robotics Team
@@ -739,7 +701,7 @@ export default function App() {
                   Competitions
                 </li>
               </ul>
-            </div>
+            </Card>
           </section>
         </div>
       </div>
@@ -750,8 +712,8 @@ export default function App() {
         </h1>
       </div>
       <div className="work-section-div section">
-        <section className="work-section container">
-          <div>
+        <section className="work-section container section-content">
+          <Card title="Professional certificates" subtitle="Coursework and credentials">
             <ul>
               <li>
                 <a
@@ -801,7 +763,7 @@ export default function App() {
                 <strong>CompTIA Network +</strong> | Pasargad Informatic Institute (2013)
               </li>
             </ul>
-          </div>
+          </Card>
         </section>
       </div>
 
