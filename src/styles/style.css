@@ -419,6 +419,83 @@ p {
 	color: var(--secondaryText);
 }
 
+.timeline--education .timeline-item {
+	position: relative;
+	opacity: 0;
+	transform: translateY(18px);
+	animation: timeline-rise 0.6s ease forwards;
+}
+
+.timeline--education .timeline-item:nth-child(1) {
+	animation-delay: 0.05s;
+}
+
+.timeline--education .timeline-item:nth-child(2) {
+	animation-delay: 0.15s;
+}
+
+.timeline--education .timeline-item:nth-child(3) {
+	animation-delay: 0.25s;
+}
+
+.timeline--education .timeline-item:nth-child(4) {
+	animation-delay: 0.35s;
+}
+
+.timeline--education .timeline-item:nth-child(5) {
+	animation-delay: 0.45s;
+}
+
+.timeline--education .timeline-item:nth-child(6) {
+	animation-delay: 0.55s;
+}
+
+.timeline--education .timeline-entry {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 248, 255, 0.92));
+	border-radius: 20px;
+	padding: var(--space-4);
+	border: 1px solid rgba(5, 16, 52, 0.08);
+	box-shadow: 0 14px 30px rgba(5, 16, 52, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline--education .timeline-date {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.35rem 0.9rem;
+	border-radius: 999px;
+	border: 1px solid rgba(5, 16, 52, 0.16);
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0 6px 16px rgba(5, 16, 52, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline--education .timeline-marker::before {
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.timeline--education .timeline-marker::after {
+	background: linear-gradient(180deg, rgba(5, 16, 52, 0.25), rgba(5, 16, 52, 0.05));
+}
+
+.timeline--education .timeline-item:hover .timeline-entry {
+	transform: translateY(-6px);
+	box-shadow: 0 18px 36px rgba(5, 16, 52, 0.12);
+	border-color: rgba(5, 16, 52, 0.18);
+}
+
+.timeline--education .timeline-item:hover .timeline-date {
+	transform: translateY(-2px);
+	border-color: rgba(5, 16, 52, 0.28);
+	box-shadow: 0 10px 22px rgba(5, 16, 52, 0.14);
+}
+
+.timeline--education .timeline-item:hover .timeline-marker::before {
+	transform: scale(1.15);
+	box-shadow: 0 0 0 6px rgba(20, 255, 226, 0.25);
+	background: #0a1f5e;
+}
+
 .education-section {
 	display: flex;
 	flex-direction: column;
@@ -427,6 +504,7 @@ p {
 
 .education-card {
 	padding: var(--space-5) var(--space-6);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(241, 246, 255, 0.9));
 }
 
 .timeline--centered {
@@ -444,6 +522,31 @@ p {
 	border-top: 1px solid rgba(5, 16, 52, 0.12);
 	margin-top: var(--space-6);
 	padding-top: var(--space-5);
+}
+
+@keyframes timeline-rise {
+	0% {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.timeline--education .timeline-item {
+		opacity: 1;
+		transform: none;
+		animation: none;
+	}
+
+	.timeline--education .timeline-entry,
+	.timeline--education .timeline-date,
+	.timeline--education .timeline-marker::before {
+		transition: none;
+	}
 }
 
 .education-publications h3 {
