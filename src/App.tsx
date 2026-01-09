@@ -59,7 +59,7 @@ const buildData = (id: SkillKey, isSmallScreen: boolean) => {
 
 const navItems = [
   { href: '#home', label: 'HOME' },
-  { href: '#educationSection', label: 'EDUCATION' },
+  { href: '#educationSection', label: 'EDUCATION & PUBLICATIONS' },
   { href: '#skillSection', label: 'SKILLS' },
   { href: '#workSection', label: 'WORK EXPERIENCE' },
   { href: '#activitiesSection', label: 'ACHIEVEMENTS' },
@@ -305,53 +305,65 @@ export default function App() {
       <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }} className="section">
         <div className="titles container" id="educationSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
-            EDUCATION
+            EDUCATION &amp; PUBLICATIONS
           </h1>
         </div>
         <div className="education-section-div">
           <section className="education-section container section-content">
-            <Card
-              title="Doctor of Philosophy (Environmental Technology)"
-              subtitle="Universiti Sains Malaysia, Penang, Malaysia"
-            >
-              <p>2021 - Present</p>
-            </Card>
-            <Card
-              title="Master of Data Science &amp; Analytics"
-              subtitle="Universiti Sains Malaysia, Penang, Malaysia"
-            >
-              <p>2018 - 2020</p>
-            </Card>
-            <Card
-              title="Bachelor of Computer Engineering Technology-Hardware"
-              subtitle="Khayyam University, Mashhad, Iran"
-            >
-              <p>2008 - 2011</p>
-            </Card>
-          </section>
-        </div>
-
-        <div className="titles container" id="publicationsSection">
-          <h1 className="separator" style={{ fontWeight: 400 }}>
-            PUBLICATIONS
-          </h1>
-        </div>
-        <div className="publications-section-div">
-          <section className="publications-section container section-content">
-            <Card title="Research publications" subtitle="Google Scholar profile">
-              <p>
-                <strong>9 research papers</strong> and <strong>over 80 citations</strong>
-              </p>
-              <a
-                href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
-                target="_blank"
-                rel="noreferrer"
-                id="papers"
-                className="hover-target"
-              >
-                View publications on Google scholar
-              </a>
-            </Card>
+            <ul className="timeline">
+              <li className="timeline-item">
+                <span className="timeline-marker" aria-hidden="true"></span>
+                <div className="timeline-content">
+                  <h3 className="timeline-title">Doctor of Philosophy (Environmental Technology)</h3>
+                  <p className="timeline-subtitle">
+                    Universiti Sains Malaysia, Penang, Malaysia
+                  </p>
+                  <p className="timeline-time">2021 - Present</p>
+                </div>
+              </li>
+              <li className="timeline-item">
+                <span className="timeline-marker" aria-hidden="true"></span>
+                <div className="timeline-content">
+                  <h3 className="timeline-title">Master of Data Science &amp; Analytics</h3>
+                  <p className="timeline-subtitle">
+                    Universiti Sains Malaysia, Penang, Malaysia
+                  </p>
+                  <p className="timeline-time">2018 - 2020</p>
+                </div>
+              </li>
+              <li className="timeline-item">
+                <span className="timeline-marker" aria-hidden="true"></span>
+                <div className="timeline-content">
+                  <h3 className="timeline-title">
+                    Bachelor of Computer Engineering Technology-Hardware
+                  </h3>
+                  <p className="timeline-subtitle">Khayyam University, Mashhad, Iran</p>
+                  <p className="timeline-time">2008 - 2011</p>
+                </div>
+              </li>
+              <li className="timeline-item">
+                <span className="timeline-marker" aria-hidden="true"></span>
+                <div className="timeline-content">
+                  <h3 className="timeline-title">Research publications</h3>
+                  <p className="timeline-subtitle">Google Scholar profile</p>
+                  <p className="timeline-body">
+                    Peer-reviewed papers and citation impact.
+                  </p>
+                  <a
+                    href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
+                    target="_blank"
+                    rel="noreferrer"
+                    id="papers"
+                    className="hover-target"
+                  >
+                    View publications on Google scholar
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <p className="papers-summary">
+              <strong>10 papers</strong> out of <strong>120 citations</strong>
+            </p>
           </section>
         </div>
       </div>
