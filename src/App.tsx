@@ -314,15 +314,12 @@ export default function App() {
         <div className="education-section-div">
           <section className="education-section container">
             <Card
-              title="Education &amp; publications"
-              subtitle="Academic timeline and research output"
               className="education-card"
             >
               <Timeline items={educationItems} className="timeline--centered" />
               <div className="education-publications" id="publicationsSection">
-                <h3>Publications</h3>
                 <p>
-                  <strong>9 research papers</strong> and <strong>over 80 citations</strong>
+                  <strong>10 research papers</strong> and <strong>over 125 citations</strong>
                 </p>
                 <a
                   href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
