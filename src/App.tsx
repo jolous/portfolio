@@ -316,7 +316,7 @@ export default function App() {
             <Card
               className="education-card"
             >
-              <Timeline items={educationItems} className="timeline--centered" />
+              <Timeline items={educationItems} className="timeline--centered timeline--education" />
               <div className="education-publications" id="publicationsSection">
                 <p>
                   <strong>10 research papers</strong> and <strong>over 125 citations</strong>
