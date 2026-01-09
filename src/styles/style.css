@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@100;200;300;400;500;600;700&display=swap');
+
+
+:root {
+	/* Color Palette */
+	--primary: #051034;
+	--primaryHover: #0c257b;
+	--text: #000000;
+	--secondaryText: #717070;
+	--negative: #ffffff;
+	--lightGradient: linear-gradient(180deg, #132860 0%, #377ede 100%);
+	--darkGradient: linear-gradient(180deg, #095eb3 0%, #2464f4 100%);
+	--dark: #2C170B;
+	--highlight: #7188b2;
+	--lightColor: #e3fffa;
+	--accent: #023af3;
+	--accentHover: #90c7fe;
+
+
+	/* Margin and Padding */
+	--spaceXXL: 48px;
+	--spaceXL: 32px;
+	--spaceLG: 24px;
+	--spaceMD: 15px;
+	--spaceSM: 10px;
+	--spaceXS: 5px;
+
+	/* Border Radius */
+	--roundXXL: 64px;
+	--roundXL: 32px;
+	--roundLG: 24px;
+	--roundMD: 16px;
+	--roundSM: 8px;
+	--roundXS: 4px;
+
+	/* Typesize */
+	--xxl: 2rem;
+	--xl: 1.5rem;
+	--lg: 1.2rem;
+	--md: 1rem;
+	--sm: .9rem;
+	--xsm: .7rem;
+
+	/* Type Weight */
+	--bold: 700;
+	--semiBold: 600;
+	--medium: 500;
+	--regular: 400;
+	--light: 300;
+}
+
+
+/* ################# Button Animation ###################### */
+
+#animated-link a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+
+#animated-link a span {
+  position: absolute;
+  display: block;
+  background: #000000;
+}
+
+/* Top border */
+#animated-link a span:nth-child(1) {
+  height: 2px;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  animation: moveTop 4s linear infinite;
+}
+
+/* Right border */
+#animated-link a span:nth-child(2) {
+  width: 2px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  animation: moveRight 4s linear infinite 1s;
+}
+
+/* Bottom border */
+#animated-link a span:nth-child(3) {
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  right: -100%;
+  animation: moveBottom 4s linear infinite 2s;
+}
+
+/* Left border */
+#animated-link a span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  animation: moveLeft 4s linear infinite 3s;
+}
+
+/* Keyframes */
+@keyframes moveTop {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+@keyframes moveRight {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+@keyframes moveBottom {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+@keyframes moveLeft {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+
+/* ####################################### */
+
+
+
+html {
+        scroll-behavior: smooth;
+}
+
+/* Change the selected text */
+::-moz-selection { /* Code for Firefox */
+  background: #84f6ff;
+}
+
+::selection {
+  background: #84f6ff;
+}
+
+/* Page Loader */
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 100000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 100000;
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	pointer-events: none;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5, 0.5, 1);
+	}
+}
+
+
+/**********************************************************/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	color: var(--text);
+}
+
+h1 {
+	font-size: var(--xxl);
+	font-weight: var(--bold);
+	letter-spacing: 2px;
+}
+
+h2 {
+	font-size: var(--xl);
+	font-weight: var(--semiBold);
+}
+
+h3 {
+	font-size: var(--lg);
+	font-weight: var(--light);
+}
+
+h4 {
+	font-size: var(--md);
+	font-weight: var(--medium);
+}
+
+p {
+	font-size: var(--sm);
+	font-weight: var(--regular);
+}
+
+ins {
+	text-decoration: none;
+	background-color: #14ffe2;
+	-webkit-animation: insAnimation 5s infinite alternate;
+	animation: insAnimation 5s infinite alternate;
+	padding: 10px;
+}
+
+@keyframes insAnimation {
+	from {
+		background-color: rgba(20, 255, 226, 0.33);
+	}
+
+	to {
+		background-color: #14ffe2;
+	}
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	cursor: none;
+}
+
+body {
+	background: #ffffff;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* Scrollbar */
+/* Let's get this party started */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 0px;
+	background: rgb(28, 28, 28);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0, 0, 0, 1);
+}
+
+
+/* PROGRESS BAR*/
+.progress {
+	height: 3px;
+	width: 0%;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	animation: progress 1s linear;
+}
+
+@keyframes progress {
+	to {
+		background-color: #14ffe2;
+		width: 100%;
+	}
+}
+
+:root * {
+	/* Pause the animation */
+	animation-play-state: paused;
+	/* Bind the animation to scroll */
+	animation-delay: calc(var(--scroll) * -1s);
+	/* These last 2 properites clean up overshoot weirdness */
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+}
+
+/* go to top */
+#goToTop {
+	display: blcok;
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	font-size: 1.2rem;
+	border: 2px black solid;
+	color: black;
+	padding: 15px;
+	border-radius: 100px;
+}
+
+#goToTop a {
+	padding: 10px;
+	text-decoration: none;
+	color: black;
+}
+
+
+/* Cursor */
+
+.cursor {
+	width: .8rem;
+	height: .8rem;
+	background: black;
+	border: 1px solid black;
+	border-radius: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	transition: all 0.3s ease;
+	transition-property: background, transform;
+	transform-origin: 100% 100%;
+	z-index: 1001;
+}
+
+.link-effect {
+	transform: scale(2.6);
+	background: rgba(20, 255, 226, 0.28);
+	border: none;
+}
+
+.hoverred-link {
+	/* color: #ffffff; */
+}
+
+
+/* Nav bar*/
+nav {
+
+  position: sticky;
+  top: 0;
+  background-color: #fff;   
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	width: auto;
+	min-height: 10vh;
+	align-items: center;
+	
+	
+}
+
+
+
+/* 1) Logo only as big as its text */
+nav h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 1rem;
+  	flex: 0 0 auto;      /* no grow, no shrink, width = content */
+  	margin: 0 1.5rem;     /* just a little breathing room */
+}
+
+/* 2) Links fill the middle and centre their items */
+.nav-links {
+  flex: 1 1 auto;       /* take all the leftover space */
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;            /* remove old margins */
+  padding: 0;
+  gap: 2rem;            /* even spacing between your buttons */
+  letter-spacing: .1rem;
+
+}
+
+/* 3) If you need your “Send Email” & “Call Me” buttons to hang off to the right, 
+      wrap them in a separate container (or you can target them by class/id): */
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;    /* pushes them to the far right */
+}
+
+
+nav h1 {
+  flex: 1;
+  margin: 40px;
+}
+.nav-links {
+  width: 70%;
+  justify-content: space-between;
+}
+
+
+.nav-links li {
+	padding: .3rem;
+	font-size: 0.8rem;
+}
+
+.nav-links li a {
+	font-weight: 600;
+	text-decoration: none;
+	color: black;
+}
+
+#contact {
+	border: 3px solid #000;
+	background-color: #000;
+	color: white;
+	padding: 10px;
+}
+
+
+#contact svg {
+	margin: 0 7px -3px 0px;
+}
+
+.phone {
+	background-color: rgba(62, 240, 255, 0);
+	padding: 10px;
+	border-color: rgba(62, 240, 255, 1);
+	border-bottom: 3px solid black;
+	color: #000000;
+	margin-right: 10px;
+}
+
+.phone svg {
+	margin: 0 7px -4px 0px;
+	transform: rotate(12deg);
+}
+
+
+.home-img img {
+	position: relative;
+	z-index: -3;
+
+}
+
+.home-section {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	min-height: 90vh;
+	align-items: center;
+	margin: auto;
+}
+
+.home-linkdin img {
+	margin-top: 450px;
+	width: 100px;
+	object-fit: scale-down;
+	transform: rotateZ(270deg);
+}
+
+.home-img {
+	margin-left: 150px;
+	background: linear-gradient(180deg, rgba(255, 254, 254, 0.6) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+.home-img img {
+	height: 550px;
+	width: 400px;
+	object-fit: cover;
+	filter: grayscale(100%);
+
+}
+
+.home-desc h1 {
+	font-size: 3rem;
+	margin-top: -150px;
+	margin-left: -125px;
+}
+
+
+.home-desc p {
+	padding: 10px 30px;
+	width: 85%;
+	font-weight: 300;
+	font-size: 1.6rem;
+	color: #262626;
+}
+
+
+/* Education */
+.education-section-div h1 {
+	font-weight: 300;
+	margin-right: 100px;
+	float: right;
+}
+
+.education-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 20px 100px;
+	margin: 0 auto;
+}
+
+.education-section-div h3 {
+	font-weight: bold;
+	position: relative;
+	display: inline;
+	background-color: rgba(247, 115, 141, 0.33);
+}
+
+.education-section-div h3::before {
+	content: "-";
+	width: 0;
+	position: absolute;
+	left: -20px;
+}
+
+.education-section-div p:first-of-type {
+	font-weight: 300;
+}
+
+
+
+/* PUBLICATIONS SECTION */
+.publications-section-div h1 {
+	font-weight: 300;
+	margin-right: 100px;
+	float: right;
+}
+
+.publications-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 40px 100px;
+	margin: 0 auto;
+}
+
+.publications-section-div h3 {
+	font-weight: bold;
+	position: relative;
+	display: inline;
+	background-color: rgba(247, 115, 141, 0.33);
+}
+
+.publications-section-div h3::before {
+	content: "-";
+	width: 0;
+	position: absolute;
+	left: -20px;
+}
+
+.publications-section-div p:first-of-type {
+	font-weight: 300;
+}
+
+.publications-section-div a {
+	color: black;
+	text-underline-position: under;
+	font-weight: 600;
+}
+
+
+
+/* SKILL SECTION */
+.skill-section-div {
+	position: relative;
+}
+
+.skill-section-div h1 {
+	font-weight: 300;
+	margin-right: 100px;
+	float: right;
+}
+
+.skill-section {
+	clear: both;
+	display: flex;
+	width: 90%;
+	align-items: center;
+	margin: auto;
+}
+
+.skill-chart {
+	width: 70%;
+	padding: 40px 0;
+
+}
+
+.skill-links {
+	border-left: 4px solid black;
+	padding-left: 20px;
+}
+
+
+.skill-links li {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	letter-spacing: .2rem;
+	list-style: none;
+	margin-top: 10px;
+}
+
+
+
+
+/* Work Experience */
+.work-section-div h1 {
+	font-weight: 300;
+	margin-right: 100px;
+	float: right;
+}
+
+.work-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 40px 100px;
+	margin: 0 auto;
+}
+
+.work-section-div h3 {
+	font-weight: bold;
+	position: relative;
+	display: inline;
+	background-color: rgba(20, 255, 226, 0.13);
+}
+
+.work-section-div h3::before {
+	content: "-";
+	width: 0;
+	position: absolute;
+	left: -20px;
+}
+
+.work-section-div p:first-of-type {
+	font-weight: 300;
+}
+
+.work-section-div a {
+	color: black;
+	text-underline-position: under;
+	font-weight: 600;
+}
+
+
+
+
+
+
+/* Copyright */
+
+.Copyright-section-div {
+	padding: 20px;
+	text-align: center;
+}
+
+
+
+.titles {
+	width: 50%;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+
+.separator {
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	text-align: center;
+}
+
+
+.separator::before,
+.separator::after {
+	content: '';
+	flex: 1;
+	background: linear-gradient(to right, transparent, #d3d3f4, transparent);
+	border-bottom: 1px solid rgba(0, 15, 25, 0.28);
+}
+
+.separator::before {
+	margin-right: 2em;
+}
+
+.separator::after {
+	margin-left: 2em;
+}
+
+
+#notReady {
+		display: none;	
+}
+
+
+@media only screen and (max-width: 1350px) {  /*768*/
+
+
+  .home-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .home-desc h1{
+	margin-bottom: 10px;
+  }
+
+  .home-img img {
+    width: 300px;
+    height: auto;
+  }
+
+  .home-img {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .home-desc h1 {
+	font-size: 2.4rem;
+    margin: 0 0 10px 0;
+  }
+
+  .home-desc p {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .home-linkdin {
+    margin-top: 0;
+  }
+
+  .home-linkdin img {
+    margin: 0 auto;
+    transform: none;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+	position: static; /* Removes sticky behavior */
+    box-shadow: none; /* Optional: removes shadow */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: inline-block;
+    width: auto;
+  }
+  
+  nav h1 {
+    margin-bottom: 1rem;
+  }
+
+  .skill-section {
+    flex-direction: column;
+  }
+
+  .skill-chart {
+    width: 100%;
+    padding: 0;
+  }
+
+  .skill-links {
+    border-left: none;
+    border-top: 2px solid black;
+    padding: 10px;
+  }
+
+  .skill-links li {
+    justify-content: center;
+  }
+
+  .education-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 10px 30px;
+	margin: 0 auto;
+}
+
+.publications-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 10px 30px;
+	margin: 0 auto;
+}
+
+  .work-section-div div {
+	clear: both;
+	width: 90%;
+	padding: 10px 30px;
+	margin: 0 auto;
+}
+
+.work-section-div img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+}
+
+
+
+
+
+
