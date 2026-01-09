@@ -299,7 +299,7 @@ p {
 
 .timeline-item {
 	display: grid;
-	grid-template-columns: minmax(120px, 160px) 24px 1fr;
+	grid-template-columns: minmax(120px, 1fr) 32px minmax(120px, 1fr);
 	column-gap: var(--space-4);
 	align-items: start;
 }
@@ -307,8 +307,38 @@ p {
 .timeline-date {
 	font-size: var(--font-size-sm);
 	color: var(--secondaryText);
-	text-align: right;
 	padding-top: var(--space-1);
+}
+
+.timeline-side {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	min-height: 100%;
+}
+
+.timeline-side--left {
+	align-items: flex-end;
+}
+
+.timeline-side--right {
+	align-items: flex-start;
+}
+
+.timeline-item--left .timeline-side--left {
+	align-items: flex-start;
+}
+
+.timeline-item--left .timeline-side--right {
+	align-items: flex-end;
+}
+
+.timeline-item--right .timeline-date {
+	text-align: right;
+}
+
+.timeline-item--left .timeline-date {
+	text-align: left;
 }
 
 .timeline-marker {
@@ -343,6 +373,88 @@ p {
 
 .timeline-content {
 	width: 100%;
+	display: flex;
+}
+
+.timeline-item--right .timeline-content {
+	justify-content: flex-start;
+}
+
+.timeline-item--left .timeline-content {
+	justify-content: flex-end;
+}
+
+.timeline-entry {
+	max-width: 320px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.timeline-title {
+	margin: 0;
+	font-size: var(--font-size-md);
+	font-weight: var(--semiBold);
+}
+
+.timeline-subtitle {
+	margin: 0;
+	color: var(--secondaryText);
+	font-size: var(--font-size-xs);
+}
+
+.timeline-body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	font-size: var(--font-size-sm);
+}
+
+.timeline-footer {
+	font-size: var(--font-size-xs);
+	color: var(--secondaryText);
+}
+
+.education-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-8);
+}
+
+.education-card {
+	padding: var(--space-5) var(--space-6);
+}
+
+.timeline--centered {
+	width: 100%;
+}
+
+.education-publications {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-4);
+	text-align: center;
+}
+
+.education-publications h2 {
+	margin-bottom: 0;
+}
+
+.publication-card {
+	max-width: 420px;
+	width: 100%;
+	text-align: center;
+}
+
+.publication-card .card__body {
+	align-items: center;
+}
+
+.publication-card a {
+	display: inline-flex;
+	margin-top: var(--space-2);
 }
 
 /**********************************************************/
@@ -872,8 +984,25 @@ nav h1 {
     row-gap: var(--space-3);
   }
 
+  .timeline-side {
+    align-items: flex-start;
+  }
+
+  .timeline-item--left .timeline-side--right,
+  .timeline-item--right .timeline-side--right {
+    align-items: flex-start;
+  }
+
   .timeline-date {
     text-align: left;
+  }
+
+  .timeline-content {
+    justify-content: flex-start;
+  }
+
+  .timeline-entry {
+    max-width: 100%;
   }
 
   .timeline-marker {
