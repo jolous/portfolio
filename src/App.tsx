@@ -819,44 +819,91 @@ export default function App() {
         </div>
         <div className="work-section-div">
           <section className="work-section">
-            <div>
-              <ul>
-                <li>
-                  <a
-                    href="https://oilpalm.usm.my"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="oilpalm"
-                    className="hover-target"
-                  >
-                    OilPalm Analytics Hub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="http://mddtextile.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="mdd"
-                    className="hover-target"
-                  >
-                    Mddtextile Website
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://nihonary.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="nihonary"
-                    className="hover-target"
-                  >
-                    Japanese Verb Conjugator
-                  </a>
-                </li>
-                <li>Graphic design projects.</li>
-                <li>Embedded hardware, robotics, and application development.</li>
-              </ul>
+            <div className="freelance-grid">
+              <article className="freelance-card">
+                <div className="freelance-card__header">
+                  <h3>OilPalm Analytics Hub</h3>
+                  <p>Interactive analytics portal for research teams and field data review.</p>
+                </div>
+                <ul className="freelance-card__tags">
+                  <li>Data dashboards</li>
+                  <li>Visualization</li>
+                  <li>Research platform</li>
+                </ul>
+                <a
+                  href="https://oilpalm.usm.my"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="freelance-card__link animated-link hover-target"
+                >
+                  Visit project
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </article>
+
+              <article className="freelance-card">
+                <div className="freelance-card__header">
+                  <h3>Mddtextile Website</h3>
+                  <p>Clean product showcase with a modern, responsive brand presence.</p>
+                </div>
+                <ul className="freelance-card__tags">
+                  <li>Brand site</li>
+                  <li>UI refresh</li>
+                  <li>Responsive build</li>
+                </ul>
+                <a
+                  href="http://mddtextile.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="freelance-card__link animated-link hover-target"
+                >
+                  View site
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </article>
+
+              <article className="freelance-card">
+                <div className="freelance-card__header">
+                  <h3>Japanese Verb Conjugator</h3>
+                  <p>Language tool focused on fast conjugation lookups and practice.</p>
+                </div>
+                <ul className="freelance-card__tags">
+                  <li>Language tools</li>
+                  <li>Search UX</li>
+                  <li>Web app</li>
+                </ul>
+                <a
+                  href="https://nihonary.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="freelance-card__link animated-link hover-target"
+                >
+                  Explore app
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+              </article>
+
+              <article className="freelance-card">
+                <div className="freelance-card__header">
+                  <h3>Creative &amp; Product Builds</h3>
+                  <p>Graphic design, embedded hardware, robotics, and custom app launches.</p>
+                </div>
+                <ul className="freelance-card__tags">
+                  <li>Graphic design</li>
+                  <li>Embedded systems</li>
+                  <li>Prototyping</li>
+                </ul>
+                <span className="freelance-card__note">Available on request</span>
+              </article>
             </div>
           </section>
         </div>
