@@ -77,10 +77,10 @@ const navItems = [
 export default function App() {
   const [activeSkill, setActiveSkill] = useState<SkillKey>('skillGeneral');
   const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({
-    phdResearcher: true,
-    iotEngineer: true,
-    itHelpDesk: true,
-    roboticTutor: true
+    phdResearcher: false,
+    iotEngineer: false,
+    itHelpDesk: false,
+    roboticTutor: false
   });
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

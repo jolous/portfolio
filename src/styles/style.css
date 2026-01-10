@@ -854,6 +854,7 @@ nav h1 {
 	text-transform: uppercase;
 	font-size: var(--xsm);
 	letter-spacing: 0.12rem;
+	text-decoration: none;
 }
 
 .work-role__link-button:hover,
