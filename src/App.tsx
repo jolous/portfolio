@@ -822,14 +822,18 @@ export default function App() {
             <div className="freelance-grid">
               <article className="freelance-card">
                 <div className="freelance-card__header">
+                  <span className="freelance-card__badge">Data Platform</span>
                   <h3>OilPalm Analytics Hub</h3>
-                  <p>Interactive analytics portal for research teams and field data review.</p>
                 </div>
-                <ul className="freelance-card__tags">
-                  <li>Data dashboards</li>
-                  <li>Visualization</li>
-                  <li>Research platform</li>
-                </ul>
+                <p className="freelance-card__summary">
+                  Interactive analytics portal for research teams to explore field insights and
+                  publish weekly reports.
+                </p>
+                <div className="freelance-card__meta">
+                  <span>Dashboards</span>
+                  <span>Visualization</span>
+                  <span>Research</span>
+                </div>
                 <a
                   href="https://oilpalm.usm.my"
                   target="_blank"
@@ -846,14 +850,18 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
+                  <span className="freelance-card__badge">Brand Site</span>
                   <h3>Mddtextile Website</h3>
-                  <p>Clean product showcase with a modern, responsive brand presence.</p>
                 </div>
-                <ul className="freelance-card__tags">
-                  <li>Brand site</li>
-                  <li>UI refresh</li>
-                  <li>Responsive build</li>
-                </ul>
+                <p className="freelance-card__summary">
+                  Modern storefront experience focused on materials, product categories, and a
+                  clean editorial feel.
+                </p>
+                <div className="freelance-card__meta">
+                  <span>UI refresh</span>
+                  <span>Responsive</span>
+                  <span>Merchandise</span>
+                </div>
                 <a
                   href="http://mddtextile.com/"
                   target="_blank"
@@ -870,14 +878,18 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
+                  <span className="freelance-card__badge">Language Tool</span>
                   <h3>Japanese Verb Conjugator</h3>
-                  <p>Language tool focused on fast conjugation lookups and practice.</p>
                 </div>
-                <ul className="freelance-card__tags">
-                  <li>Language tools</li>
-                  <li>Search UX</li>
-                  <li>Web app</li>
-                </ul>
+                <p className="freelance-card__summary">
+                  Fast conjugation lookups with practice flows that keep learners focused and
+                  confident.
+                </p>
+                <div className="freelance-card__meta">
+                  <span>Search UX</span>
+                  <span>Learning</span>
+                  <span>Web app</span>
+                </div>
                 <a
                   href="https://nihonary.com"
                   target="_blank"
@@ -894,14 +906,18 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
+                  <span className="freelance-card__badge">Studio</span>
                   <h3>Creative &amp; Product Builds</h3>
-                  <p>Graphic design, embedded hardware, robotics, and custom app launches.</p>
                 </div>
-                <ul className="freelance-card__tags">
-                  <li>Graphic design</li>
-                  <li>Embedded systems</li>
-                  <li>Prototyping</li>
-                </ul>
+                <p className="freelance-card__summary">
+                  Graphic design, embedded hardware, robotics, and custom launches tailored to
+                  ambitious briefs.
+                </p>
+                <div className="freelance-card__meta">
+                  <span>Design</span>
+                  <span>Embedded</span>
+                  <span>Prototyping</span>
+                </div>
                 <span className="freelance-card__note">Available on request</span>
               </article>
             </div>
