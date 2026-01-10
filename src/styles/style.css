@@ -781,11 +781,86 @@ nav h1 {
 	float: right;
 }
 
-.work-section-div div {
+.work-section-div .work-role {
 	clear: both;
 	width: 90%;
 	padding: 40px 100px;
 	margin: 0 auto;
+	border-bottom: 1px solid rgba(5, 16, 52, 0.08);
+}
+
+.work-section-div .work-role:last-child {
+	border-bottom: none;
+}
+
+.work-role__summary {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--spaceLG);
+}
+
+.work-role__summary p {
+	margin-top: 8px;
+}
+
+.work-role__details {
+	margin-top: var(--spaceMD);
+	padding-top: var(--spaceSM);
+	border-top: 1px dashed rgba(5, 16, 52, 0.15);
+}
+
+.work-role__details p + p,
+.work-role__details p + ul {
+	margin-top: var(--spaceSM);
+}
+
+.work-role__toggle {
+	border: 1px solid rgba(5, 16, 52, 0.3);
+	background: transparent;
+	color: var(--text);
+	font-size: var(--xsm);
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
+	padding: 8px 16px;
+	border-radius: 999px;
+	cursor: none;
+	transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+		box-shadow 0.2s ease, background-color 0.2s ease;
+	white-space: nowrap;
+}
+
+.work-role__toggle:hover,
+.work-role__toggle:focus-visible {
+	color: #0f766e;
+	border-color: rgba(15, 118, 110, 0.6);
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
+	transform: translateY(-1px);
+}
+
+.work-role.is-collapsed .work-role__summary {
+	opacity: 0.95;
+}
+
+.work-role__link-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-left: var(--spaceSM);
+	margin-top: 8px;
+	padding: 4px 12px;
+	border-radius: 999px;
+	border: 1px solid rgba(5, 16, 52, 0.3);
+	text-transform: uppercase;
+	font-size: var(--xsm);
+	letter-spacing: 0.12rem;
+}
+
+.work-role__link-button:hover,
+.work-role__link-button:focus-visible {
+	color: #0f766e;
+	border-color: rgba(15, 118, 110, 0.6);
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
 }
 
 .work-section-div h3 {
@@ -984,7 +1059,7 @@ nav h1 {
 	margin: 0 auto;
 }
 
-  .work-section-div div {
+  .work-section-div .work-role {
 	clear: both;
 	width: 90%;
 	padding: 10px 30px;
