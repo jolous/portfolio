@@ -1171,6 +1171,10 @@ nav h1 {
 	font-weight: 600;
 }
 
+.publications-section-div a.work-role__toggle {
+	text-decoration: none;
+}
+
 .publications-summary {
 	text-align: center;
 }
