@@ -16,9 +16,10 @@ const chartOptions = {
       },
       pointLabels: {
         font: {
-          size: 14,
+          size: 12,
           weight: '600'
         },
+        padding: 12,
         color: '#111827'
       },
       grid: {
