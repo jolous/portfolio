@@ -836,6 +836,218 @@ nav h1 {
 	}
 }
 
+.certificates-section-div {
+	position: relative;
+}
+
+.certificates-section {
+	clear: both;
+	width: 90%;
+	padding: 30px 100px 10px;
+	margin: 0 auto;
+	display: grid;
+	gap: 28px;
+}
+
+.certificates-intro {
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.certificates-kicker {
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: rgba(5, 16, 52, 0.55);
+	margin-bottom: 8px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.certificates-intro h2 {
+	font-size: clamp(1.8rem, 2vw, 2.4rem);
+	font-weight: 500;
+	margin: 0;
+	color: #051034;
+}
+
+.certificates-lead {
+	max-width: 420px;
+	font-size: 1rem;
+	color: rgba(5, 16, 52, 0.7);
+	margin: 0;
+}
+
+.certificates-grid {
+	display: grid;
+	gap: 22px;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.certificate-card {
+	position: relative;
+	padding: 22px 22px 26px;
+	border-radius: 20px;
+	background: linear-gradient(150deg, rgba(255, 255, 255, 0.96), rgba(233, 241, 255, 0.75));
+	box-shadow: 0 18px 34px rgba(5, 16, 52, 0.1);
+	overflow: hidden;
+	display: grid;
+	gap: 12px;
+	animation: certificateFloat 10s ease-in-out infinite;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 1px solid rgba(5, 16, 52, 0.08);
+	border-radius: 20px;
+}
+
+.certificate-card::after {
+	content: '';
+	position: absolute;
+	top: -40%;
+	left: -20%;
+	width: 70%;
+	height: 200%;
+	background: linear-gradient(120deg, rgba(19, 40, 96, 0.18), transparent);
+	opacity: 0.6;
+	transform: rotate(12deg);
+	animation: certificateGlow 12s ease-in-out infinite;
+}
+
+.certificate-card:nth-child(2) {
+	animation-delay: 1s;
+}
+
+.certificate-card:nth-child(3) {
+	animation-delay: 2s;
+}
+
+.certificate-card:nth-child(4) {
+	animation-delay: 3s;
+}
+
+.certificate-card:nth-child(5) {
+	animation-delay: 4s;
+}
+
+.certificate-card:nth-child(6) {
+	animation-delay: 5s;
+}
+
+.certificate-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 22px 40px rgba(5, 16, 52, 0.14);
+}
+
+.certificate-card__meta {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	font-size: 0.85rem;
+	color: rgba(5, 16, 52, 0.6);
+}
+
+.certificate-card__year {
+	background: rgba(5, 16, 52, 0.1);
+	color: #051034;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	font-variant-numeric: tabular-nums;
+}
+
+.certificate-card h3 {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	font-size: 1.1rem;
+	color: #051034;
+}
+
+.certificate-card p {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	color: rgba(5, 16, 52, 0.65);
+}
+
+.certificate-card__link {
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	width: fit-content;
+	padding: 6px 14px;
+	border-radius: 999px;
+	border: 1px solid rgba(5, 16, 52, 0.28);
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.7rem;
+	text-decoration: none;
+	color: #051034;
+}
+
+.certificate-card__link:hover,
+.certificate-card__link:focus-visible {
+	color: #0f766e;
+	border-color: rgba(15, 118, 110, 0.6);
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
+}
+
+.certificate-card__badge {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+	z-index: 1;
+	padding: 6px 12px;
+	border-radius: 999px;
+	font-size: 0.72rem;
+	font-weight: 600;
+	background: rgba(247, 115, 141, 0.2);
+	color: #8a1e39;
+}
+
+@keyframes certificateGlow {
+	0% {
+		transform: translateX(0) rotate(12deg);
+		opacity: 0.4;
+	}
+	50% {
+		transform: translateX(18%) rotate(12deg);
+		opacity: 0.65;
+	}
+	100% {
+		transform: translateX(0) rotate(12deg);
+		opacity: 0.4;
+	}
+}
+
+@keyframes certificateFloat {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
 .education-timeline {
 	position: relative;
 	display: grid;
@@ -1524,6 +1736,14 @@ nav h1 {
   }
 
   .achievements-lead {
+	max-width: 100%;
+  }
+
+  .certificates-section {
+	padding: 20px 30px 10px;
+  }
+
+  .certificates-lead {
 	max-width: 100%;
   }
 
