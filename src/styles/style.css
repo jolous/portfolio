@@ -722,6 +722,7 @@ nav h1 {
 /* SKILL SECTION */
 .skill-section-div {
 	position: relative;
+	padding: 10px 0 20px;
 }
 
 .skill-section-div h1 {
@@ -736,17 +737,21 @@ nav h1 {
 	width: 90%;
 	align-items: center;
 	margin: auto;
+	gap: 40px;
+	padding: 20px 40px;
 }
 
 .skill-chart {
 	width: 70%;
 	padding: 40px 0;
-
+	position: relative;
+	z-index: 1;
 }
 
 .skill-links {
-	border-left: 4px solid black;
-	padding-left: 20px;
+	border-left: 2px solid rgba(5, 16, 52, 0.2);
+	padding-left: 28px;
+	padding: 10px 0 10px 28px;
 }
 
 
@@ -757,6 +762,13 @@ nav h1 {
 	letter-spacing: .2rem;
 	list-style: none;
 	margin-top: 10px;
+	color: #111827;
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.skill-links li:hover {
+	transform: translateX(4px);
+	color: #0f766e;
 }
 
 
