@@ -381,6 +381,7 @@ export default function App() {
       </nav>
 
       <section id="home" className="home-section">
+        <div className="home-background" aria-hidden="true"></div>
         <div className="home-linkdin">
           <a
             href="https://www.linkedin.com/in/ehsan-jolous-jamshidi-19a2b6146/"

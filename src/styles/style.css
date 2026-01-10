@@ -472,6 +472,42 @@ nav h1 {
 	min-height: 90vh;
 	align-items: center;
 	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.home-section > :not(.home-background) {
+	position: relative;
+	z-index: 1;
+}
+
+.home-background {
+	position: absolute;
+	inset: -15% 0 0;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(circle at 12% 15%, rgba(120, 185, 255, 0.28), rgba(120, 185, 255, 0) 55%),
+		radial-gradient(circle at 85% 25%, rgba(180, 255, 240, 0.22), rgba(180, 255, 240, 0) 50%),
+		radial-gradient(circle at 45% 70%, rgba(118, 146, 255, 0.2), rgba(118, 146, 255, 0) 60%);
+	filter: blur(10px);
+}
+
+.home-background::before,
+.home-background::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(135deg, rgba(235, 248, 255, 0.75), rgba(255, 255, 255, 0) 45%),
+		linear-gradient(315deg, rgba(209, 232, 255, 0.35), rgba(255, 255, 255, 0) 55%);
+	opacity: 0.75;
+}
+
+.home-background::after {
+	inset: 12% 8% 0;
+	background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 55%);
+	opacity: 0.9;
 }
 
 .home-linkdin img {
