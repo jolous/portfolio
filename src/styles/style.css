@@ -1219,6 +1219,26 @@ nav h1 {
 	z-index: 1;
 }
 
+.skill-chart__frame {
+	width: 100%;
+}
+
+.skill-chart__svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.skill-chart .skill-sector {
+	transition: opacity 0.3s ease;
+}
+
+.skill-chart .skill-label {
+	fill: #111827;
+	font-size: 12px;
+	font-weight: 600;
+}
+
 .skill-links {
 	border-left: 2px solid rgba(5, 16, 52, 0.2);
 	padding-left: 28px;

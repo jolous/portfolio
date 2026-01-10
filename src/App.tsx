@@ -1,69 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import Chart from 'chart.js/auto';
 import TextScramble from './utils/textScramble';
-import { skillOrder, skills, type SkillKey, type SkillLabel } from './data/skills';
+import { skillOrder, skills, type SkillKey } from './data/skills';
+import PolarAreaChart from './components/PolarAreaChart';
 
 const phrases = ['Data Scientist', 'Web Developer', 'Programmer', 'Photographer'];
-
-const chartOptions = {
-  scales: {
-    r: {
-      beginAtZero: true,
-      min: 0,
-      max: 100,
-      ticks: {
-        display: false
-      },
-      pointLabels: {
-        font: {
-          size: 14,
-          weight: '600'
-        },
-        color: '#111827'
-      },
-      grid: {
-        display: true,
-        color: 'rgba(15, 23, 42, 0.25)'
-      },
-      angleLines: {
-        color: 'rgba(15, 23, 42, 0.2)'
-      }
-    }
-  },
-  plugins: {
-    legend: {
-      display: false
-    }
-  }
-};
-
-const buildLabels = (labels: SkillLabel[], isSmallScreen: boolean) =>
-  labels.map(label => {
-    if (Array.isArray(label)) {
-      return isSmallScreen ? label[0] : label;
-    }
-    return label;
-  });
-
-const buildData = (id: SkillKey, isSmallScreen: boolean) => {
-  const { label, labels, data } = skills[id];
-  return {
-    labels: buildLabels(labels, isSmallScreen),
-    datasets: [
-      {
-        label,
-        backgroundColor: 'rgba(16, 185, 129, 0.35)',
-        borderColor: 'rgba(15, 118, 110, 0.95)',
-        borderWidth: 3,
-        pointBackgroundColor: 'rgba(15, 118, 110, 1)',
-        pointBorderColor: '#ffffff',
-        pointBorderWidth: 2,
-        radius: 5,
-        data
-      }
-    ]
-  };
-};
 
 const navItems = [
   { href: '#home', label: 'HOME' },
@@ -121,8 +61,6 @@ export default function App() {
     hardwareSoftwareSpecialist: false
   });
   const cursorRef = useRef<HTMLDivElement | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const chartRef = useRef<Chart | null>(null);
   const scrambleRef = useRef<HTMLSpanElement | null>(null);
   const heroImageRef = useRef<HTMLDivElement | null>(null);
 
@@ -256,36 +194,6 @@ export default function App() {
 
     return () => window.clearTimeout(timeoutId);
   }, []);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    const chart = new Chart(canvasRef.current, {
-      type: 'radar',
-      data: buildData(activeSkill, window.innerWidth < 1000),
-      options: chartOptions
-    });
-
-    chartRef.current = chart;
-    return () => chart.destroy();
-  }, []);
-
-  useEffect(() => {
-    if (!chartRef.current) return;
-    chartRef.current.data = buildData(activeSkill, window.innerWidth < 1000);
-    chartRef.current.update();
-  }, [activeSkill]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (!chartRef.current) return;
-      chartRef.current.data = buildData(activeSkill, window.innerWidth < 1000);
-      chartRef.current.update();
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [activeSkill]);
 
   useEffect(() => {
     const handleAnchorClick = (event: Event) => {
@@ -497,7 +405,10 @@ export default function App() {
         <div className="skill-section-div">
           <section className="skill-section">
             <div className="skill-chart">
-              <canvas id="marksChart" ref={canvasRef}></canvas>
+              <PolarAreaChart
+                labels={skills[activeSkill].labels}
+                data={skills[activeSkill].data}
+              />
             </div>
 
             <ul className="skill-links">
