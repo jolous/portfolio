@@ -16,11 +16,17 @@ const chartOptions = {
       },
       pointLabels: {
         font: {
-          size: 14
-        }
+          size: 14,
+          weight: '600'
+        },
+        color: '#111827'
       },
       grid: {
-        display: true
+        display: true,
+        color: 'rgba(15, 23, 42, 0.25)'
+      },
+      angleLines: {
+        color: 'rgba(15, 23, 42, 0.2)'
       }
     }
   },
@@ -46,10 +52,13 @@ const buildData = (id: SkillKey, isSmallScreen: boolean) => {
     datasets: [
       {
         label,
-        backgroundColor: 'rgba(20, 255, 226,.5)',
-        borderColor: 'rgba(0, 0, 0,1)',
-        borderWidth: 4,
-        radius: 4,
+        backgroundColor: 'rgba(16, 185, 129, 0.35)',
+        borderColor: 'rgba(15, 118, 110, 0.95)',
+        borderWidth: 3,
+        pointBackgroundColor: 'rgba(15, 118, 110, 1)',
+        pointBorderColor: '#ffffff',
+        pointBorderWidth: 2,
+        radius: 5,
         data
       }
     ]
@@ -436,7 +445,7 @@ export default function App() {
         </div>
         <div className="skill-section-div">
           <section className="skill-section">
-            <div className="skill-chart" style={{ zIndex: -999 }}>
+            <div className="skill-chart">
               <canvas id="marksChart" ref={canvasRef}></canvas>
             </div>
 
