@@ -822,7 +822,6 @@ export default function App() {
             <div className="freelance-grid">
               <article className="freelance-card">
                 <div className="freelance-card__header">
-                  <span className="freelance-card__badge">Data Platform</span>
                   <h3>OilPalm Analytics Hub</h3>
                 </div>
                 <p className="freelance-card__summary">
@@ -850,7 +849,6 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
-                  <span className="freelance-card__badge">Brand Site</span>
                   <h3>Mddtextile Website</h3>
                 </div>
                 <p className="freelance-card__summary">
@@ -878,7 +876,6 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
-                  <span className="freelance-card__badge">Language Tool</span>
                   <h3>Japanese Verb Conjugator</h3>
                 </div>
                 <p className="freelance-card__summary">
@@ -906,7 +903,6 @@ export default function App() {
 
               <article className="freelance-card">
                 <div className="freelance-card__header">
-                  <span className="freelance-card__badge">Studio</span>
                   <h3>Creative &amp; Product Builds</h3>
                 </div>
                 <p className="freelance-card__summary">
