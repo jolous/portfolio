@@ -408,9 +408,11 @@ export default function App() {
           <section className="publications-section">
             <div className="publications-summary">
               <h3 style={{ fontWeight: 400 }}>
-                <strong>10 research papers</strong> and <strong>over 125 citations</strong>
+                <span className="highlight">
+                  <strong>10 research papers</strong> and <strong>over 125 citations</strong>
+                </span>
               </h3>
-              <li>
+              <p>
                 <a
                   href="https://scholar.google.com/citations?hl=en&user=35yqvLcAAAAJ&view_op=list_works"
                   target="_blank"
@@ -420,7 +422,7 @@ export default function App() {
                 >
                   View publications on Google scholar
                 </a>
-              </li>
+              </p>
             </div>
           </section>
         </div>

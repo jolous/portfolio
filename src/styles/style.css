@@ -667,8 +667,7 @@ nav h1 {
 .publications-section-div h3 {
 	font-weight: bold;
 	position: relative;
-	display: inline;
-	background-color: rgba(247, 115, 141, 0.33);
+	display: block;
 }
 
 .publications-section-div h3::before {
@@ -697,8 +696,12 @@ nav h1 {
 	margin-bottom: 12px;
 }
 
-.publications-summary li {
-	list-style: none;
+.highlight {
+	display: inline;
+	padding: 0 0.15em;
+	background: linear-gradient(120deg, rgba(247, 115, 141, 0.35) 0%, rgba(247, 115, 141, 0.35) 100%);
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 }
 
 
