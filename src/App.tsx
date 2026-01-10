@@ -74,6 +74,39 @@ const navItems = [
   { href: '#certificatesSection', label: 'CERTIFICATES' }
 ];
 
+const demoGalleryItems = [
+  {
+    title: 'CEMACS Atmosfera Dashboard',
+    description:
+      'Daily-updated and interactive visualization of parameters measured for the atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies (CEMACS) USM.',
+    ctaLabel: 'View Daily-Updated Interactive Visualizations',
+    ctaHref: 'https://atmosfera.usm.my/visualization.html',
+    mediaType: 'image',
+    mediaSrc: '/images/demo/atmosfera.png',
+    mediaAlt: 'CEMACS Interactive Visualization'
+  },
+  {
+    title: 'IPCC Methane Sunburst',
+    description:
+      'An interactive Plotly sunburst chart mapping IPCC methane emission factors across Malaysia built for Environmental Defense Fund (EDF).',
+    ctaLabel: 'View Interactive Sunburst Chart',
+    ctaHref: '/demo/sunburst_plot.html',
+    mediaType: 'image',
+    mediaSrc: '/images/demo/sunburst.png',
+    mediaAlt: 'Interactive sunburst chart'
+  },
+  {
+    title: 'Oil Palm Detection Demo',
+    description: 'Oil palm tree detection showcase using YOLOv5 on recorded drone video.',
+    ctaLabel: 'Watch Detection Demo',
+    ctaHref: '/images/demo/oilpalm_detection.mp4',
+    mediaType: 'video',
+    mediaSrc: '/images/demo/oilpalm_detection.mp4',
+    mediaPoster: '/images/demo/oilpalm_detection.png',
+    mediaAlt: 'Oil palm detection video'
+  }
+];
+
 export default function App() {
   const [activeSkill, setActiveSkill] = useState<SkillKey>('skillGeneral');
   const [expandedRoles, setExpandedRoles] = useState<Record<string, boolean>>({
@@ -929,84 +962,41 @@ export default function App() {
         </div>
         <div className="work-section-div">
           <section className="work-section">
-            <div>
-              <ul>
-              <p>
-                Daily-updated and interactive visualization of parameters measured for the
-                atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies
-                (CEMACS) USM.
-              </p>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <img
-                  src="/images/demo/atmosfera.png"
-                  alt="CEMACS Interactive Visualization"
-                  style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
-                />
-              </div>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <span id="animated-link">
-                  <a
-                    href="https://atmosfera.usm.my/visualization.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="vizOverview"
-                    className="hover-target"
-                  >
-                    View Daily-Updated Interactive Visualizations<span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </a>
-                </span>
-              </div>
-
-              <br />
-              <br />
-
-              <p>
-                An interactive Plotly sunburst chart mapping IPCC methane emission factors across
-                Malaysia built for Environmental Defense Fund (EDF).
-              </p>
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <img
-                  src="/images/demo/sunburst.png"
-                  alt="CEMACS Interactive Visualization"
-                  style={{ width: '100%', maxWidth: '600px', height: 'auto', display: 'block', margin: '0 auto' }}
-                />
-              </div>
-
-              <div style={{ display: 'block', textAlign: 'center' }}>
-                <span id="animated-link">
-                  <a
-                    href="/demo/sunburst_plot.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    id="sunburstDemo"
-                    className="hover-target"
-                  >
-                    View Interactive Sunburst Chart<span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </a>
-                </span>
-              </div>
-
-              <br />
-              <br />
-
-              <p>Oil palm tree detection showcase using YOLOv5 on recorded drone video.</p>
-              <div style={{ textAlign: 'center' }}>
-                <video
-                  controls
-                  poster="/images/demo/oilpalm_detection.png"
-                  style={{ maxWidth: '100%', width: '100%', height: 'auto', display: 'block', margin: '0 auto' }}
+            <div className="demo-gallery">
+              {demoGalleryItems.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={`demo-card${index % 2 === 1 ? ' demo-card--reversed' : ''}`}
                 >
-                  <source src="/images/demo/oilpalm_detection.mp4" type="video/mp4" />
-                  Your browser does not support HTML5 video.
-                </video>
-              </div>
-              </ul>
+                  <div className="demo-card__content">
+                    <span className="demo-card__eyebrow">Featured demo</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <a
+                      href={item.ctaHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="animated-link hover-target demo-card__link"
+                    >
+                      {item.ctaLabel}
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </div>
+                  <div className="demo-card__media">
+                    {item.mediaType === 'video' ? (
+                      <video controls poster={item.mediaPoster}>
+                        <source src={item.mediaSrc} type="video/mp4" />
+                        Your browser does not support HTML5 video.
+                      </video>
+                    ) : (
+                      <img src={item.mediaSrc} alt={item.mediaAlt} />
+                    )}
+                  </div>
+                </article>
+              ))}
             </div>
           </section>
         </div>
