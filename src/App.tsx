@@ -980,13 +980,9 @@ export default function App() {
                       href={item.ctaHref}
                       target="_blank"
                       rel="noreferrer"
-                      className="animated-link hover-target demo-card__link"
+                      className="work-role__link-button hover-target"
                     >
                       {item.ctaLabel}
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
                     </a>
                   </div>
                   <div className="demo-card__media">
