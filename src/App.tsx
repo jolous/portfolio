@@ -77,9 +77,10 @@ const navItems = [
 const demoGalleryItems = [
   {
     title: 'CEMACS Atmosfera Dashboard',
+    badge: 'New idea',
     description:
       'Daily-updated and interactive visualization of parameters measured for the atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies (CEMACS) USM.',
-    ctaLabel: 'View Daily-Updated Interactive Visualizations',
+    ctaLabel: 'View daily dashboard',
     ctaHref: 'https://atmosfera.usm.my/visualization.html',
     mediaType: 'image',
     mediaSrc: '/images/demo/atmosfera.png',
@@ -87,9 +88,10 @@ const demoGalleryItems = [
   },
   {
     title: 'IPCC Methane Sunburst',
+    badge: 'Prototype',
     description:
       'An interactive Plotly sunburst chart mapping IPCC methane emission factors across Malaysia built for Environmental Defense Fund (EDF).',
-    ctaLabel: 'View Interactive Sunburst Chart',
+    ctaLabel: 'View sunburst chart',
     ctaHref: '/demo/sunburst_plot.html',
     mediaType: 'image',
     mediaSrc: '/images/demo/sunburst.png',
@@ -97,8 +99,9 @@ const demoGalleryItems = [
   },
   {
     title: 'Oil Palm Detection Demo',
+    badge: 'Showcase',
     description: 'Oil palm tree detection showcase using YOLOv5 on recorded drone video.',
-    ctaLabel: 'Watch Detection Demo',
+    ctaLabel: 'Watch detection demo',
     ctaHref: '/images/demo/oilpalm_detection.mp4',
     mediaType: 'video',
     mediaSrc: '/images/demo/oilpalm_detection.mp4',
@@ -969,6 +972,7 @@ export default function App() {
                   className={`demo-card${index % 2 === 1 ? ' demo-card--reversed' : ''}`}
                 >
                   <div className="demo-card__content">
+                    <span className="demo-card__badge">{item.badge}</span>
                     <span className="demo-card__eyebrow">Featured demo</span>
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>

@@ -1370,6 +1370,7 @@ nav h1 {
 }
 
 .demo-card {
+	position: relative;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
 	gap: 32px;
@@ -1380,6 +1381,26 @@ nav h1 {
 	border: 1px solid rgba(5, 16, 52, 0.08);
 	box-shadow: 0 20px 45px rgba(5, 16, 52, 0.12);
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	overflow: hidden;
+}
+
+.demo-card::after {
+	content: '';
+	position: absolute;
+	top: -20%;
+	left: -10%;
+	width: 55%;
+	height: 55%;
+	background: radial-gradient(circle, rgba(20, 255, 226, 0.22) 0%, rgba(20, 255, 226, 0) 70%);
+	filter: blur(10px);
+	opacity: 0;
+	transition: opacity 0.35s ease;
+	pointer-events: none;
+}
+
+.demo-card--reversed::after {
+	left: auto;
+	right: -10%;
 }
 
 .demo-card--reversed {
@@ -1399,10 +1420,28 @@ nav h1 {
 	box-shadow: 0 26px 55px rgba(5, 16, 52, 0.16);
 }
 
+.demo-card:hover::after {
+	opacity: 1;
+}
+
 .demo-card__content {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+}
+
+.demo-card__badge {
+	align-self: flex-start;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background: rgba(20, 255, 226, 0.2);
+	color: #0f766e;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.14rem;
+	text-transform: uppercase;
 }
 
 .demo-card__eyebrow {
@@ -1433,10 +1472,35 @@ nav h1 {
 .demo-card__link {
 	align-self: flex-start;
 	margin-top: 4px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	width: fit-content;
+	padding: 6px 16px;
+	border-radius: 999px;
+	border: 1px solid rgba(5, 16, 52, 0.28);
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.7rem;
+	text-decoration: none;
+	text-underline-position: unset;
+	color: #051034;
+}
+
+.demo-card__link span {
+	background: rgba(15, 118, 110, 0.65);
+}
+
+.demo-card__link:hover,
+.demo-card__link:focus-visible {
+	color: #0f766e;
+	border-color: rgba(15, 118, 110, 0.6);
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.18);
 }
 
 .demo-card__media {
 	position: relative;
+	z-index: 1;
 	border-radius: 18px;
 	overflow: hidden;
 	background: rgba(15, 23, 42, 0.05);
