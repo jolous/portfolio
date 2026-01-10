@@ -590,7 +590,7 @@ export default function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                     id="bms"
-                    className="hover-target"
+                    className="work-role__link-button hover-target"
                   >
                     product demo
                   </a>
