@@ -1219,6 +1219,53 @@ nav h1 {
 	z-index: 1;
 }
 
+.skills-radial-chart {
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+.skills-radial-arc {
+	animation: radial-arc-grow 0.7s ease-out both;
+	transform-origin: center;
+}
+
+.skills-radial-label {
+	font-size: 11px;
+	font-weight: 600;
+	fill: #111827;
+	opacity: 0;
+	animation: radial-label-fade 0.5s ease-out 0.15s forwards;
+}
+
+.skills-radial-label-line {
+	letter-spacing: 0.02em;
+}
+
+@keyframes radial-arc-grow {
+	from {
+		transform: scale(0.85);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes radial-label-fade {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .skill-links {
 	border-left: 2px solid rgba(5, 16, 52, 0.2);
 	padding-left: 28px;
