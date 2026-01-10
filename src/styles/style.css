@@ -1219,6 +1219,22 @@ nav h1 {
 	z-index: 1;
 }
 
+.skills-radial-chart {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.skills-radial-label {
+	font-size: 12px;
+	font-weight: 600;
+	fill: #111827;
+}
+
+.skills-radial-label-line {
+	letter-spacing: 0.02em;
+}
+
 .skill-links {
 	border-left: 2px solid rgba(5, 16, 52, 0.2);
 	padding-left: 28px;
