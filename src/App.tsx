@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type MutableRefObject } from 'react';
 import Chart from 'chart.js/auto';
 import TextScramble from './utils/textScramble';
 import { skillOrder, skills, type SkillKey, type SkillLabel } from './data/skills';
 
 const phrases = ['Data Scientist', 'Web Developer', 'Programmer', 'Photographer'];
 
-const chartOptions = {
+const createChartOptions = (tooltipLabelsRef: MutableRefObject<string[]>) => ({
   scales: {
     r: {
       beginAtZero: true,
@@ -31,25 +31,37 @@ const chartOptions = {
       }
     }
   },
+  interaction: {
+    intersect: false,
+    mode: 'nearest' as const
+  },
   plugins: {
     legend: {
       display: false
+    },
+    tooltip: {
+      displayColors: false,
+      callbacks: {
+        title: (items: Array<{ dataIndex: number; label?: string }>) => {
+          const index = items[0]?.dataIndex ?? 0;
+          return tooltipLabelsRef.current[index] ?? items[0]?.label ?? '';
+        },
+        label: () => ''
+      }
     }
   }
-};
+});
 
-const buildLabels = (labels: SkillLabel[], isSmallScreen: boolean) =>
-  labels.map(label => {
-    if (Array.isArray(label)) {
-      return isSmallScreen ? label[0] : label;
-    }
-    return label;
-  });
+const buildDisplayLabels = (labels: SkillLabel[]) =>
+  labels.map(label => (Array.isArray(label) ? label[0] : label));
 
-const buildData = (id: SkillKey, isSmallScreen: boolean) => {
+const buildTooltipLabels = (labels: SkillLabel[]) =>
+  labels.map(label => (Array.isArray(label) ? `${label[0]} ${label[1]}` : label));
+
+const buildData = (id: SkillKey) => {
   const { label, labels, data } = skills[id];
   return {
-    labels: buildLabels(labels, isSmallScreen),
+    labels: buildDisplayLabels(labels),
     datasets: [
       {
         label,
@@ -124,8 +136,10 @@ export default function App() {
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
+  const tooltipLabelsRef = useRef<string[]>(buildTooltipLabels(skills[activeSkill].labels));
   const scrambleRef = useRef<HTMLSpanElement | null>(null);
   const heroImageRef = useRef<HTMLDivElement | null>(null);
+  const chartOptions = useMemo(() => createChartOptions(tooltipLabelsRef), []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -263,7 +277,7 @@ export default function App() {
 
     const chart = new Chart(canvasRef.current, {
       type: 'radar',
-      data: buildData(activeSkill, window.innerWidth < 1000),
+      data: buildData(activeSkill),
       options: chartOptions
     });
 
@@ -273,14 +287,15 @@ export default function App() {
 
   useEffect(() => {
     if (!chartRef.current) return;
-    chartRef.current.data = buildData(activeSkill, window.innerWidth < 1000);
+    tooltipLabelsRef.current = buildTooltipLabels(skills[activeSkill].labels);
+    chartRef.current.data = buildData(activeSkill);
     chartRef.current.update();
   }, [activeSkill]);
 
   useEffect(() => {
     const handleResize = () => {
       if (!chartRef.current) return;
-      chartRef.current.data = buildData(activeSkill, window.innerWidth < 1000);
+      chartRef.current.data = buildData(activeSkill);
       chartRef.current.update();
     };
 
@@ -498,7 +513,7 @@ export default function App() {
         <div className="skill-section-div">
           <section className="skill-section">
             <div className="skill-chart">
-              <canvas id="marksChart" ref={canvasRef}></canvas>
+              <canvas id="marksChart" ref={canvasRef} className="hover-target"></canvas>
             </div>
 
             <ul className="skill-links">

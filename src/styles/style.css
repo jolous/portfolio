@@ -1218,7 +1218,7 @@ nav h1 {
 /* SKILL SECTION */
 .skill-section-div {
 	position: relative;
-	padding: 10px 0 20px;
+	padding: 4px 0 12px;
 }
 
 .skill-section-div h1 {
@@ -1234,12 +1234,12 @@ nav h1 {
 	align-items: center;
 	margin: auto;
 	gap: 40px;
-	padding: 20px 40px;
+	padding: 10px 40px 16px;
 }
 
 .skill-chart {
 	width: 70%;
-	padding: 50px 12px;
+	padding: 20px 12px;
 	position: relative;
 	z-index: 1;
 }
