@@ -1099,58 +1099,100 @@ export default function App() {
             CERTIFICATES
           </h1>
         </div>
-        <div className="work-section-div">
-          <section className="work-section">
-            <div>
-              <ul>
-              <li>
+        <div className="certificates-section-div">
+          <section className="certificates-section">
+            <header className="certificates-intro">
+              <div>
+                <span className="certificates-kicker">Professional Learning</span>
+                <h2>Credentials &amp; Continuous Training</h2>
+              </div>
+              <p className="certificates-lead">
+                A curated mix of cloud certifications and foundational IT credentials that highlight
+                ongoing technical growth.
+              </p>
+            </header>
+            <div className="certificates-grid">
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2022</span>
+                </div>
+                <h3>Architecting on AWS</h3>
+                <p className="certificate-card__provider">Trainocate</p>
+                <p>Deep dive into designing scalable, resilient cloud infrastructure.</p>
                 <a
                   href="/images/certificate/CourseCert_TM20923.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="AWS1"
-                  className="hover-target"
+                  className="certificate-card__link hover-target"
                 >
-                  <strong>Architecting on AWS</strong>
-                </a>{' '}
-                | Trainocate (2022)
-              </li>
-              <li>
+                  View certificate
+                </a>
+                <span className="certificate-card__badge">Cloud</span>
+              </article>
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2022</span>
+                </div>
+                <h3>AWS Technical Essentials</h3>
+                <p className="certificate-card__provider">Trainocate</p>
+                <p>Core AWS services, shared responsibility, and architectural basics.</p>
                 <a
                   href="/images/certificate/CourseCert_TM20924.pdf"
                   target="_blank"
                   rel="noreferrer"
                   id="AWS2"
-                  className="hover-target"
+                  className="certificate-card__link hover-target"
                 >
-                  <strong>AWS Technical Essentials</strong>
+                  View certificate
                 </a>
-                | Trainocate (2022)
-              </li>
-              <li>
+                <span className="certificate-card__badge">AWS</span>
+              </article>
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2020</span>
+                </div>
+                <h3>Cloud Computing Basics (Cloud 101)</h3>
+                <p className="certificate-card__provider">Coursera</p>
+                <p>Cloud fundamentals, service models, and practical adoption guidance.</p>
                 <a
                   href="https://www.coursera.org/account/accomplishments/verify/YQY7U8H62873"
                   target="_blank"
                   rel="noreferrer"
                   id="cloud"
-                  className="hover-target"
+                  className="certificate-card__link hover-target"
                 >
-                  <strong>Cloud Computing Basics (Cloud 101)</strong>
-                </a>{' '}
-                | Coursera (2020)
-              </li>
-              <li>
-                <strong>Statistical Hypothesis Testing &amp; Data Analysis</strong> | Universiti Sains
-                Malaysia (2019)
-              </li>
-              <li>
-                <strong>Microsoft Certified IT Professional (MCITP)</strong> | Pasargad Informatic
-                Institute (2013)
-              </li>
-              <li>
-                <strong>CompTIA Network +</strong> | Pasargad Informatic Institute (2013)
-              </li>
-              </ul>
+                  Verify credential
+                </a>
+                <span className="certificate-card__badge">Cloud</span>
+              </article>
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2019</span>
+                </div>
+                <h3>Statistical Hypothesis Testing &amp; Data Analysis</h3>
+                <p className="certificate-card__provider">Universiti Sains Malaysia</p>
+                <p>Applied statistical inference and analytical decision-making methods.</p>
+                <span className="certificate-card__badge">Data</span>
+              </article>
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2013</span>
+                </div>
+                <h3>Microsoft Certified IT Professional (MCITP)</h3>
+                <p className="certificate-card__provider">Pasargad Informatic Institute</p>
+                <p>Enterprise administration skills across Microsoft server technologies.</p>
+                <span className="certificate-card__badge">Microsoft</span>
+              </article>
+              <article className="certificate-card">
+                <div className="certificate-card__meta">
+                  <span className="certificate-card__year">2013</span>
+                </div>
+                <h3>CompTIA Network +</h3>
+                <p className="certificate-card__provider">Pasargad Informatic Institute</p>
+                <p>Core networking concepts, troubleshooting, and infrastructure support.</p>
+                <span className="certificate-card__badge">Networking</span>
+              </article>
             </div>
           </section>
         </div>
