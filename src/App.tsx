@@ -301,7 +301,7 @@ export default function App() {
         </div>
       </section>
 
-      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
+      <div className="section-card" style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
         <div className="titles" id="educationSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             EDUCATION
@@ -309,31 +309,37 @@ export default function App() {
         </div>
         <div className="education-section-div">
           <section className="education-section">
-            <div>
-              <h3>Doctor of Philosophy (Environmental Technology)</h3>
-              <p>
-                Universiti Sains Malaysia, Penang, Malaysia
-                <br />
-                2021 - Present
-              </p>
-            </div>
-
-            <div>
-              <h3>Master of Data Science &amp; Analytics</h3>
-              <p>
-                Universiti Sains Malaysia, Penang, Malaysia
-                <br />
-                2018 - 2020
-              </p>
-            </div>
-
-            <div>
-              <h3>Bachelor of Computer Engineering Technology-Hardware</h3>
-              <p>
-                Khayyam University, Mashhad, Iran
-                <br />
-                2008 - 2011
-              </p>
+            <div className="education-timeline">
+              <div className="timeline-item left">
+                <div className="timeline-content">
+                  <h3>Doctor of Philosophy (Environmental Technology)</h3>
+                  <p>
+                    Universiti Sains Malaysia, Penang, Malaysia
+                    <br />
+                    2021 - Present
+                  </p>
+                </div>
+              </div>
+              <div className="timeline-item right">
+                <div className="timeline-content">
+                  <h3>Master of Data Science &amp; Analytics</h3>
+                  <p>
+                    Universiti Sains Malaysia, Penang, Malaysia
+                    <br />
+                    2018 - 2020
+                  </p>
+                </div>
+              </div>
+              <div className="timeline-item left">
+                <div className="timeline-content">
+                  <h3>Bachelor of Computer Engineering Technology-Hardware</h3>
+                  <p>
+                    Khayyam University, Mashhad, Iran
+                    <br />
+                    2008 - 2011
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -345,7 +351,7 @@ export default function App() {
         </div>
         <div className="publications-section-div">
           <section className="publications-section">
-            <div>
+            <div className="publications-summary">
               <h3 style={{ fontWeight: 400 }}>
                 <strong>10 research papers</strong> and <strong>over 125 citations</strong>
               </h3>
@@ -365,34 +371,36 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="skillSection">
-        <h1 className="separator" style={{ fontWeight: 400 }}>
-          SKILLS
-        </h1>
-      </div>
-      <div className="skill-section-div">
-        <section className="skill-section">
-          <div className="skill-chart" style={{ zIndex: -999 }}>
-            <canvas id="marksChart" ref={canvasRef}></canvas>
-          </div>
+      <div className="section-card">
+        <div className="titles" id="skillSection">
+          <h1 className="separator" style={{ fontWeight: 400 }}>
+            SKILLS
+          </h1>
+        </div>
+        <div className="skill-section-div">
+          <section className="skill-section">
+            <div className="skill-chart" style={{ zIndex: -999 }}>
+              <canvas id="marksChart" ref={canvasRef}></canvas>
+            </div>
 
-          <ul className="skill-links">
-            {skillLabels.map(skill => (
-              <li
-                key={skill.key}
-                id={skill.key}
-                onClick={() => setActiveSkill(skill.key)}
-                style={{ fontWeight: skill.key === activeSkill ? 'bold' : 400 }}
-                className="hover-target"
-              >
-                {skill.label}
-              </li>
-            ))}
-          </ul>
-        </section>
+            <ul className="skill-links">
+              {skillLabels.map(skill => (
+                <li
+                  key={skill.key}
+                  id={skill.key}
+                  onClick={() => setActiveSkill(skill.key)}
+                  style={{ fontWeight: skill.key === activeSkill ? 'bold' : 400 }}
+                  className="hover-target"
+                >
+                  {skill.label}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(245, 247, 252, 0.5)' }}>
+      <div className="section-card" style={{ backgroundColor: 'rgba(245, 247, 252, 0.5)' }}>
         <div className="titles" id="workSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             WORK EXPERIENCE
@@ -537,35 +545,37 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="volunteerSection">
-        <h1 className="separator" style={{ fontWeight: 400 }}>
-          VOLUNTEER
-        </h1>
-      </div>
-      <div className="work-section-div">
-        <section className="work-section">
-          <div>
-            <h3>Hardware &amp; Software Specialist</h3>
-            <p>
-              Penang Science Cluster, Penang, Malaysia
-              <br />
-              Mar 2019 – Jan 2020
-            </p>
-            <ul>
-              <li>Developed an Android app for volunteer event registration using QR-code scanning.</li>
-              <li>
-                Automated volunteer data storage and retrieval in Google Sheets via Google Apps
-                Script.
-              </li>
-              <li>Built an Electron-based voting application with a Python back end.</li>
-              <li>Integrated and configured fingerprint sensor modules for attendee verification.</li>
-              <li>Mentored students in various PSC-hosted competitions.</li>
-            </ul>
-          </div>
-        </section>
+      <div className="section-card">
+        <div className="titles" id="volunteerSection">
+          <h1 className="separator" style={{ fontWeight: 400 }}>
+            VOLUNTEER
+          </h1>
+        </div>
+        <div className="work-section-div">
+          <section className="work-section">
+            <div>
+              <h3>Hardware &amp; Software Specialist</h3>
+              <p>
+                Penang Science Cluster, Penang, Malaysia
+                <br />
+                Mar 2019 – Jan 2020
+              </p>
+              <ul>
+                <li>Developed an Android app for volunteer event registration using QR-code scanning.</li>
+                <li>
+                  Automated volunteer data storage and retrieval in Google Sheets via Google Apps
+                  Script.
+                </li>
+                <li>Built an Electron-based voting application with a Python back end.</li>
+                <li>Integrated and configured fingerprint sensor modules for attendee verification.</li>
+                <li>Mentored students in various PSC-hosted competitions.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(250, 252, 245, 0.5)' }}>
+      <div className="section-card" style={{ backgroundColor: 'rgba(250, 252, 245, 0.5)' }}>
         <div className="titles">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             FREELANCE
@@ -616,15 +626,16 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="demoGallerySection">
-        <h1 className="separator" style={{ fontWeight: 400 }}>
-          DEMO GALLERY
-        </h1>
-      </div>
-      <div className="work-section-div">
-        <section className="work-section">
-          <div>
-            <ul>
+      <div className="section-card">
+        <div className="titles" id="demoGallerySection">
+          <h1 className="separator" style={{ fontWeight: 400 }}>
+            DEMO GALLERY
+          </h1>
+        </div>
+        <div className="work-section-div">
+          <section className="work-section">
+            <div>
+              <ul>
               <p>
                 Daily-updated and interactive visualization of parameters measured for the
                 atmosphere-coastal ocean experiment at the Centre for Marine and Coastal Studies
@@ -700,12 +711,13 @@ export default function App() {
                   Your browser does not support HTML5 video.
                 </video>
               </div>
-            </ul>
-          </div>
-        </section>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
 
-      <div style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
+      <div className="section-card" style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
         <div className="titles" id="activitiesSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             ACHIEVEMENTS
@@ -744,15 +756,16 @@ export default function App() {
         </div>
       </div>
 
-      <div className="titles" id="certificatesSection">
-        <h1 className="separator" style={{ fontWeight: 400 }}>
-          CERTIFICATES
-        </h1>
-      </div>
-      <div className="work-section-div">
-        <section className="work-section">
-          <div>
-            <ul>
+      <div className="section-card">
+        <div className="titles" id="certificatesSection">
+          <h1 className="separator" style={{ fontWeight: 400 }}>
+            CERTIFICATES
+          </h1>
+        </div>
+        <div className="work-section-div">
+          <section className="work-section">
+            <div>
+              <ul>
               <li>
                 <a
                   href="/images/certificate/CourseCert_TM20923.pdf"
@@ -800,9 +813,10 @@ export default function App() {
               <li>
                 <strong>CompTIA Network +</strong> | Pasargad Informatic Institute (2013)
               </li>
-            </ul>
-          </div>
-        </section>
+              </ul>
+            </div>
+          </section>
+        </div>
       </div>
 
       <div className="Copyright-section-div">
