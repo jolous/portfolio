@@ -1115,9 +1115,9 @@ export default function App() {
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2022</span>
-                  <span className="certificate-card__provider">Trainocate</span>
                 </div>
                 <h3>Architecting on AWS</h3>
+                <p className="certificate-card__provider">Trainocate</p>
                 <p>Deep dive into designing scalable, resilient cloud infrastructure.</p>
                 <a
                   href="/images/certificate/CourseCert_TM20923.pdf"
@@ -1133,9 +1133,9 @@ export default function App() {
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2022</span>
-                  <span className="certificate-card__provider">Trainocate</span>
                 </div>
                 <h3>AWS Technical Essentials</h3>
+                <p className="certificate-card__provider">Trainocate</p>
                 <p>Core AWS services, shared responsibility, and architectural basics.</p>
                 <a
                   href="/images/certificate/CourseCert_TM20924.pdf"
@@ -1151,9 +1151,9 @@ export default function App() {
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2020</span>
-                  <span className="certificate-card__provider">Coursera</span>
                 </div>
                 <h3>Cloud Computing Basics (Cloud 101)</h3>
+                <p className="certificate-card__provider">Coursera</p>
                 <p>Cloud fundamentals, service models, and practical adoption guidance.</p>
                 <a
                   href="https://www.coursera.org/account/accomplishments/verify/YQY7U8H62873"
@@ -1169,31 +1169,27 @@ export default function App() {
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2019</span>
-                  <span className="certificate-card__provider">Universiti Sains Malaysia</span>
                 </div>
                 <h3>Statistical Hypothesis Testing &amp; Data Analysis</h3>
+                <p className="certificate-card__provider">Universiti Sains Malaysia</p>
                 <p>Applied statistical inference and analytical decision-making methods.</p>
                 <span className="certificate-card__badge">Data</span>
               </article>
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2013</span>
-                  <span className="certificate-card__provider">
-                    Pasargad Informatic Institute
-                  </span>
                 </div>
                 <h3>Microsoft Certified IT Professional (MCITP)</h3>
+                <p className="certificate-card__provider">Pasargad Informatic Institute</p>
                 <p>Enterprise administration skills across Microsoft server technologies.</p>
                 <span className="certificate-card__badge">Microsoft</span>
               </article>
               <article className="certificate-card">
                 <div className="certificate-card__meta">
                   <span className="certificate-card__year">2013</span>
-                  <span className="certificate-card__provider">
-                    Pasargad Informatic Institute
-                  </span>
                 </div>
                 <h3>CompTIA Network +</h3>
+                <p className="certificate-card__provider">Pasargad Informatic Institute</p>
                 <p>Core networking concepts, troubleshooting, and infrastructure support.</p>
                 <span className="certificate-card__badge">Networking</span>
               </article>

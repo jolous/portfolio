@@ -952,7 +952,7 @@ nav h1 {
 	position: relative;
 	z-index: 1;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 12px;
 	font-size: 0.85rem;
@@ -975,6 +975,15 @@ nav h1 {
 	margin: 0;
 	font-size: 1.1rem;
 	color: #051034;
+}
+
+.certificate-card__provider {
+	position: relative;
+	z-index: 1;
+	margin: -4px 0 0;
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: rgba(5, 16, 52, 0.55);
 }
 
 .certificate-card p {
