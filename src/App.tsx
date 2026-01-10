@@ -80,7 +80,9 @@ export default function App() {
     phdResearcher: false,
     iotEngineer: false,
     itHelpDesk: false,
-    roboticTutor: false
+    roboticTutor: false,
+    aiTechIntern: false,
+    hardwareSoftwareSpecialist: false
   });
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -707,29 +709,104 @@ export default function App() {
       <div className="section-card">
         <div className="titles" id="volunteerSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
-            VOLUNTEER
+            VOLUNTEER &amp; INTERNSHIP
           </h1>
         </div>
         <div className="work-section-div">
           <section className="work-section">
-            <div>
-              <h3>Hardware &amp; Software Specialist</h3>
-              <p>
-                Penang Science Cluster, Penang, Malaysia
-                <br />
-                Mar 2019 – Jan 2020
-              </p>
-              <ul>
-                <li>Developed an Android app for volunteer event registration using QR-code scanning.</li>
-                <li>
-                  Automated volunteer data storage and retrieval in Google Sheets via Google Apps
-                  Script.
-                </li>
-                <li>Built an Electron-based voting application with a Python back end.</li>
-                <li>Integrated and configured fingerprint sensor modules for attendee verification.</li>
-                <li>Mentored students in various PSC-hosted competitions.</li>
-              </ul>
-            </div>
+            <article
+              className={`work-role ${expandedRoles.aiTechIntern ? 'is-expanded' : 'is-collapsed'}`}
+            >
+              <div className="work-role__summary">
+                <div>
+                  <h3>AI &amp; Technology Intern</h3>
+                  <p>
+                    Dainichi Hanso Co., Ltd., Osaka, Japan
+                    <br />
+                    Nov 2025 - Dec 2025
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="work-role__toggle hover-target"
+                  aria-expanded={expandedRoles.aiTechIntern}
+                  aria-controls="work-details-ai-tech-intern"
+                  onClick={() => toggleRoleDetails('aiTechIntern')}
+                >
+                  {expandedRoles.aiTechIntern ? 'Hide details' : 'Show details'}
+                </button>
+              </div>
+              <div
+                id="work-details-ai-tech-intern"
+                className="work-role__details"
+                hidden={!expandedRoles.aiTechIntern}
+              >
+                <p>
+                  Selected by Japan&apos;s METI global talent program (14,000+ applicants) to deliver
+                  an AI-powered inspection workflow for injection molded resin products.
+                </p>
+                <ul>
+                  <li>
+                    Built a YOLOv12 + OpenCV inspection pipeline detecting voids, dark spots, and
+                    color inconsistencies.
+                  </li>
+                  <li>
+                    Integrated Raspberry Pi and Arduino hardware for real-time communication with
+                    industrial devices.
+                  </li>
+                  <li>
+                    Designed a monitoring dashboard for defect counts, inspection statistics, and
+                    configurable parameters.
+                  </li>
+                  <li>
+                    Developed a bilingual real-time communication app using OpenAI Realtime API for
+                    live speech-to-text, translation, and summarization.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              className={`work-role ${
+                expandedRoles.hardwareSoftwareSpecialist ? 'is-expanded' : 'is-collapsed'
+              }`}
+            >
+              <div className="work-role__summary">
+                <div>
+                  <h3>Hardware &amp; Software Specialist</h3>
+                  <p>
+                    Penang Science Cluster, Penang, Malaysia
+                    <br />
+                    Mar 2019 – Jan 2020
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="work-role__toggle hover-target"
+                  aria-expanded={expandedRoles.hardwareSoftwareSpecialist}
+                  aria-controls="work-details-hardware-software-specialist"
+                  onClick={() => toggleRoleDetails('hardwareSoftwareSpecialist')}
+                >
+                  {expandedRoles.hardwareSoftwareSpecialist ? 'Hide details' : 'Show details'}
+                </button>
+              </div>
+              <div
+                id="work-details-hardware-software-specialist"
+                className="work-role__details"
+                hidden={!expandedRoles.hardwareSoftwareSpecialist}
+              >
+                <ul>
+                  <li>Developed an Android app for volunteer event registration with QR check-ins.</li>
+                  <li>
+                    Automated volunteer data storage and retrieval in Google Sheets via Google Apps
+                    Script.
+                  </li>
+                  <li>Built an Electron-based voting application with a Python back end.</li>
+                  <li>Integrated fingerprint sensors for secure participant verification.</li>
+                  <li>Mentored students in PSC competitions with technical implementation support.</li>
+                </ul>
+              </div>
+            </article>
           </section>
         </div>
       </div>
