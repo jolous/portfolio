@@ -478,9 +478,9 @@ export default function App() {
                   target="_blank"
                   rel="noreferrer"
                   id="papers"
-                  className="hover-target"
+                  className="work-role__toggle hover-target"
                 >
-                  View publications on Google scholar
+                  Scholar profile
                 </a>
               </p>
             </div>
