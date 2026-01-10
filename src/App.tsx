@@ -1002,43 +1002,95 @@ export default function App() {
         </div>
       </div>
 
-      <div className="section-card" style={{ backgroundColor: 'rgba(252, 245, 245, 0.5)' }}>
+      <div className="section-card achievement-section-card">
         <div className="titles" id="activitiesSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             ACHIEVEMENTS
           </h1>
         </div>
-        <div className="education-section-div">
-          <section className="education-section">
+        <section className="achievements-section">
+          <div className="achievements-intro">
             <div>
-              <h3>Competitor Achievements</h3>
-              <ul>
-                <li>
-                  <strong>2009 (Mashhad)</strong>: 1st place, ARC Cup Provincial Robotics
-                </li>
-                <li>
-                  <strong>2008 (Birjand)</strong>: 3rd place, National Robotic Competitions
-                </li>
-                <li>
-                  <strong>2010 (Tehran)</strong>: 5th place, Line-Follower Robot contest at Amir
-                  Kabir University
-                </li>
-              </ul>
+              <p className="achievements-kicker">Milestones &amp; leadership</p>
+              <h2>Competitive highlights and team contributions.</h2>
             </div>
-            <div>
-              <h3>Team &amp; Leadership Roles</h3>
-              <ul>
-                <li>
-                  <strong>2010–2011 (Mashhad)</strong>: Team Member, Khayam University Robotics Team
-                </li>
-                <li>
-                  <strong>2012 (Ghoochan)</strong>: Technical Referee, Azad University Robotic
-                  Competitions
-                </li>
-              </ul>
-            </div>
-          </section>
-        </div>
+            <p className="achievements-lead">
+              A curated selection of awards, placements, and roles that shaped my experience in
+              robotics competitions and leadership programs.
+            </p>
+          </div>
+          <div className="achievements-grid">
+            <article className="achievements-track">
+              <header className="achievements-track__header">
+                <span>Competitions</span>
+                <h3>Competitor Achievements</h3>
+                <p>High-impact placements across provincial and national robotics contests.</p>
+              </header>
+              <div className="achievements-track__items">
+                <div className="achievement-card">
+                  <div className="achievement-card__year">2009</div>
+                  <div className="achievement-card__body">
+                    <h4>ARC Cup Provincial Robotics</h4>
+                    <p>1st place · Mashhad</p>
+                  </div>
+                  <span className="achievement-card__badge">Gold</span>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-card__year">2008</div>
+                  <div className="achievement-card__body">
+                    <h4>National Robotic Competitions</h4>
+                    <p>3rd place · Birjand</p>
+                  </div>
+                  <span className="achievement-card__badge achievement-card__badge--bronze">
+                    Bronze
+                  </span>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-card__year">2010</div>
+                  <div className="achievement-card__body">
+                    <h4>Line-Follower Robot Contest</h4>
+                    <p>5th place · Amir Kabir University</p>
+                  </div>
+                  <span className="achievement-card__badge achievement-card__badge--finalist">
+                    Finalist
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article className="achievements-track">
+              <header className="achievements-track__header">
+                <span>Leadership</span>
+                <h3>Team &amp; Leadership Roles</h3>
+                <p>Hands-on collaboration and officiating roles in academic competitions.</p>
+              </header>
+              <div className="achievements-track__items">
+                <div className="achievement-card">
+                  <div className="achievement-card__year achievement-card__year--range">
+                    2010
+                    <span>–2011</span>
+                  </div>
+                  <div className="achievement-card__body">
+                    <h4>Khayam University Robotics Team</h4>
+                    <p>Team Member · Mashhad</p>
+                  </div>
+                  <span className="achievement-card__badge achievement-card__badge--team">
+                    Core
+                  </span>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-card__year">2012</div>
+                  <div className="achievement-card__body">
+                    <h4>Azad University Robotic Competitions</h4>
+                    <p>Technical Referee · Ghoochan</p>
+                  </div>
+                  <span className="achievement-card__badge achievement-card__badge--mentor">
+                    Mentor
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
 
       <div className="section-card">
