@@ -71,6 +71,7 @@ export default function App() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
   const scrambleRef = useRef<HTMLSpanElement | null>(null);
+  const heroImageRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +93,46 @@ export default function App() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const heroImage = heroImageRef.current;
+    if (!heroImage) return;
+
+    const maxTilt = 6;
+    const maxGlowShift = 18;
+
+    const updateTilt = (event: MouseEvent) => {
+      const rect = heroImage.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const xPercent = (x / rect.width) * 2 - 1;
+      const yPercent = (y / rect.height) * 2 - 1;
+
+      const tiltX = (-yPercent * maxTilt).toFixed(2);
+      const tiltY = (xPercent * maxTilt).toFixed(2);
+
+      heroImage.style.setProperty('--tilt-x', `${tiltX}deg`);
+      heroImage.style.setProperty('--tilt-y', `${tiltY}deg`);
+      heroImage.style.setProperty('--glow-x', `${(xPercent * maxGlowShift).toFixed(2)}px`);
+      heroImage.style.setProperty('--glow-y', `${(yPercent * maxGlowShift).toFixed(2)}px`);
+    };
+
+    const resetTilt = () => {
+      heroImage.style.setProperty('--tilt-x', '0deg');
+      heroImage.style.setProperty('--tilt-y', '0deg');
+      heroImage.style.setProperty('--glow-x', '0px');
+      heroImage.style.setProperty('--glow-y', '0px');
+    };
+
+    resetTilt();
+    heroImage.addEventListener('mousemove', updateTilt);
+    heroImage.addEventListener('mouseleave', resetTilt);
+
+    return () => {
+      heroImage.removeEventListener('mousemove', updateTilt);
+      heroImage.removeEventListener('mouseleave', resetTilt);
+    };
   }, []);
 
   useEffect(() => {
@@ -276,7 +317,7 @@ export default function App() {
             <img src="/images/linkdin.png" alt="LinkedIn" />
           </a>
         </div>
-        <div className="home-img">
+        <div className="home-img" ref={heroImageRef}>
           <img src="/images/Ehsan.jpg" alt="Ehsan Jolous Jamshidi" />
         </div>
         <div className="home-desc">
