@@ -1200,21 +1200,13 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="site-footer__inner">
-          <div className="site-footer__contact">
-            <span className="site-footer__eyebrow">Contact</span>
-            <h2>Let&#39;s build something thoughtful.</h2>
-            <div className="site-footer__details">
-              <a
-                href="mailto:&#101;&#106;&#046;&#106;&#097;&#109;&#115;&#104;&#105;&#100;&#105;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
-                className="hover-target"
-              >
-                ej.jamshidi@gmail.com
-              </a>
-              <a href="tel:60109068744" className="hover-target">
-                +60 10 906 8744
-              </a>
-              <span className="site-footer__muted">Kuala Lumpur, Malaysia</span>
-            </div>
+          <div className="site-footer__cta">
+            <span className="site-footer__eyebrow">Collaborate</span>
+            <h2>Let&#39;s work together to build something meaningful.</h2>
+            <p className="site-footer__quote">
+              “Thoughtful design, clear data, and human-centered solutions.”
+            </p>
+            <span className="site-footer__spark" aria-hidden="true"></span>
           </div>
         </div>
         <div className="site-footer__bottom">
