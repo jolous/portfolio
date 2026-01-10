@@ -71,6 +71,7 @@ export default function App() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
   const scrambleRef = useRef<HTMLSpanElement | null>(null);
+  const heroImageRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +93,60 @@ export default function App() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const heroImage = heroImageRef.current;
+    if (!heroImage) return;
+
+    const maxTilt = 3.5;
+    const maxGlowShift = 12;
+    let frameId = 0;
+    let latestEvent: PointerEvent | null = null;
+
+    const applyTilt = () => {
+      if (!latestEvent) return;
+      const rect = heroImage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = latestEvent.clientX - rect.left;
+      const y = latestEvent.clientY - rect.top;
+      const xPercent = Math.max(-1, Math.min(1, (x / rect.width) * 2 - 1));
+      const yPercent = Math.max(-1, Math.min(1, (y / rect.height) * 2 - 1));
+
+      const tiltX = (-yPercent * maxTilt).toFixed(2);
+      const tiltY = (xPercent * maxTilt).toFixed(2);
+
+      heroImage.style.setProperty('--tilt-x', `${tiltX}deg`);
+      heroImage.style.setProperty('--tilt-y', `${tiltY}deg`);
+      heroImage.style.setProperty('--glow-x', `${(xPercent * maxGlowShift).toFixed(2)}px`);
+      heroImage.style.setProperty('--glow-y', `${(yPercent * maxGlowShift).toFixed(2)}px`);
+      frameId = 0;
+    };
+
+    const updateTilt = (event: PointerEvent) => {
+      latestEvent = event;
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(applyTilt);
+    };
+
+    const resetTilt = () => {
+      latestEvent = null;
+      heroImage.style.setProperty('--tilt-x', '0deg');
+      heroImage.style.setProperty('--tilt-y', '0deg');
+      heroImage.style.setProperty('--glow-x', '0px');
+      heroImage.style.setProperty('--glow-y', '0px');
+    };
+
+    resetTilt();
+    heroImage.addEventListener('pointermove', updateTilt);
+    heroImage.addEventListener('pointerleave', resetTilt);
+
+    return () => {
+      heroImage.removeEventListener('pointermove', updateTilt);
+      heroImage.removeEventListener('pointerleave', resetTilt);
+      if (frameId) window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   useEffect(() => {
@@ -276,7 +331,7 @@ export default function App() {
             <img src="/images/linkdin.png" alt="LinkedIn" />
           </a>
         </div>
-        <div className="home-img">
+        <div className="home-img" ref={heroImageRef}>
           <img src="/images/Ehsan.jpg" alt="Ehsan Jolous Jamshidi" />
         </div>
         <div className="home-desc">
