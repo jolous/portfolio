@@ -1198,11 +1198,21 @@ export default function App() {
         </div>
       </div>
 
-      <div className="Copyright-section-div">
-        <section className="Copyright-section">
-          <p>Copyright © 2025 Ehsan Jolous Jamshidi. All Rights Reserved</p>
-        </section>
-      </div>
+      <footer className="site-footer">
+        <div className="site-footer__inner">
+          <div className="site-footer__cta">
+            <span className="site-footer__eyebrow">Collaborate</span>
+            <h2>Let&#39;s work together to build something meaningful.</h2>
+            <p className="site-footer__quote">
+              “Thoughtful design, clear data, and human-centered solutions.”
+            </p>
+            <span className="site-footer__spark" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div className="site-footer__bottom">
+          <p>© 2025 Ehsan Jolous Jamshidi. All Rights Reserved.</p>
+        </div>
+      </footer>
     </>
   );
 }

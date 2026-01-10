@@ -1601,11 +1601,121 @@ nav h1 {
 
 
 
-/* Copyright */
+/* Footer */
 
-.Copyright-section-div {
-	padding: 20px;
+.site-footer {
+	background: #f7f9fc;
+	border-top: 1px solid rgba(15, 23, 42, 0.08);
+	padding: 64px 6vw 32px;
+}
+
+.site-footer__inner {
+	display: flex;
+	justify-content: center;
+	max-width: 900px;
+	margin: 0 auto 32px;
 	text-align: center;
+}
+
+.site-footer__cta h2 {
+	margin: 12px 0 16px;
+	font-size: clamp(1.7rem, 2.3vw, 2.2rem);
+	color: #111827;
+}
+
+.site-footer__eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.22em;
+	font-size: 0.72rem;
+	color: #6b7280;
+}
+
+.site-footer__quote {
+	font-size: 1rem;
+	color: #4b5563;
+	line-height: 1.7;
+	margin: 0 auto;
+	max-width: 520px;
+}
+
+.site-footer__spark {
+	display: inline-block;
+	width: 120px;
+	height: 4px;
+	margin-top: 24px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, rgba(14, 116, 144, 0.2), #0f766e, rgba(14, 116, 144, 0.2));
+	position: relative;
+	overflow: hidden;
+	animation: footerGlow 6s ease-in-out infinite;
+}
+
+.site-footer__spark::after {
+	content: '';
+	position: absolute;
+	top: -8px;
+	left: -20px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: rgba(15, 118, 110, 0.35);
+	filter: blur(6px);
+	animation: footerSpark 3s ease-in-out infinite;
+}
+
+.site-footer__cta:hover .site-footer__spark {
+	transform: scaleX(1.1);
+	transition: transform 0.3s ease;
+}
+
+.site-footer__muted {
+	display: block;
+	margin-top: 12px;
+	color: #6b7280;
+	font-size: 0.9rem;
+}
+
+.site-footer__bottom {
+	border-top: 1px solid rgba(15, 23, 42, 0.08);
+	padding-top: 20px;
+	text-align: center;
+	color: #6b7280;
+	font-size: 0.9rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+	.site-footer {
+		padding: 48px 8vw 28px;
+	}
+}
+
+@keyframes footerGlow {
+	0%,
+	100% {
+		opacity: 0.7;
+		transform: translateY(0);
+	}
+	50% {
+		opacity: 1;
+		transform: translateY(-2px);
+	}
+}
+
+@keyframes footerSpark {
+	0% {
+		transform: translateX(0);
+		opacity: 0.4;
+	}
+	50% {
+		transform: translateX(140px);
+		opacity: 0.9;
+	}
+	100% {
+		transform: translateX(280px);
+		opacity: 0.4;
+	}
 }
 
 
