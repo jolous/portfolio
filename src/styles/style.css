@@ -460,9 +460,9 @@ nav h1 {
 
 .home-img img {
 	position: relative;
-	z-index: 1;
-	transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(8px);
-	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	z-index: 0;
+	transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(6px);
+	transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 .home-section {
@@ -510,14 +510,14 @@ nav h1 {
 	filter: blur(30px);
 	opacity: 0;
 	transform: translate3d(var(--glow-x, 0px), var(--glow-y, 0px), 0);
-	transition: opacity 0.3s ease, transform 0.3s ease;
+	transition: opacity 0.45s ease, transform 0.45s ease;
 	z-index: 0;
 	pointer-events: none;
 }
 
 .home-img:hover img {
-	transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(18px);
-	box-shadow: 0 24px 45px rgba(0, 0, 0, 0.18);
+	transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(12px);
+	box-shadow: 0 22px 40px rgba(0, 0, 0, 0.18);
 }
 
 .home-img:hover::after {
@@ -528,6 +528,11 @@ nav h1 {
 	font-size: 3rem;
 	margin-top: -150px;
 	margin-left: -125px;
+}
+
+.home-desc {
+	position: relative;
+	z-index: 2;
 }
 
 

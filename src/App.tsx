@@ -99,15 +99,20 @@ export default function App() {
     const heroImage = heroImageRef.current;
     if (!heroImage) return;
 
-    const maxTilt = 6;
-    const maxGlowShift = 18;
+    const maxTilt = 3.5;
+    const maxGlowShift = 12;
+    let frameId = 0;
+    let latestEvent: PointerEvent | null = null;
 
-    const updateTilt = (event: MouseEvent) => {
+    const applyTilt = () => {
+      if (!latestEvent) return;
       const rect = heroImage.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const xPercent = (x / rect.width) * 2 - 1;
-      const yPercent = (y / rect.height) * 2 - 1;
+      if (!rect.width || !rect.height) return;
+
+      const x = latestEvent.clientX - rect.left;
+      const y = latestEvent.clientY - rect.top;
+      const xPercent = Math.max(-1, Math.min(1, (x / rect.width) * 2 - 1));
+      const yPercent = Math.max(-1, Math.min(1, (y / rect.height) * 2 - 1));
 
       const tiltX = (-yPercent * maxTilt).toFixed(2);
       const tiltY = (xPercent * maxTilt).toFixed(2);
@@ -116,9 +121,17 @@ export default function App() {
       heroImage.style.setProperty('--tilt-y', `${tiltY}deg`);
       heroImage.style.setProperty('--glow-x', `${(xPercent * maxGlowShift).toFixed(2)}px`);
       heroImage.style.setProperty('--glow-y', `${(yPercent * maxGlowShift).toFixed(2)}px`);
+      frameId = 0;
+    };
+
+    const updateTilt = (event: PointerEvent) => {
+      latestEvent = event;
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(applyTilt);
     };
 
     const resetTilt = () => {
+      latestEvent = null;
       heroImage.style.setProperty('--tilt-x', '0deg');
       heroImage.style.setProperty('--tilt-y', '0deg');
       heroImage.style.setProperty('--glow-x', '0px');
@@ -126,12 +139,13 @@ export default function App() {
     };
 
     resetTilt();
-    heroImage.addEventListener('mousemove', updateTilt);
-    heroImage.addEventListener('mouseleave', resetTilt);
+    heroImage.addEventListener('pointermove', updateTilt);
+    heroImage.addEventListener('pointerleave', resetTilt);
 
     return () => {
-      heroImage.removeEventListener('mousemove', updateTilt);
-      heroImage.removeEventListener('mouseleave', resetTilt);
+      heroImage.removeEventListener('pointermove', updateTilt);
+      heroImage.removeEventListener('pointerleave', resetTilt);
+      if (frameId) window.cancelAnimationFrame(frameId);
     };
   }, []);
 
