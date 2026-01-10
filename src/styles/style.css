@@ -555,6 +555,27 @@ nav h1 {
 	padding: 20px 0 40px;
 }
 
+.volunteer-section-card {
+	border: 1px solid rgba(16, 185, 129, 0.18);
+	background: linear-gradient(140deg, rgba(255, 255, 255, 0.92), rgba(236, 253, 245, 0.6));
+}
+
+.volunteer-section-card .section-subtitle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin: 6px 0 0;
+	font-size: 0.95rem;
+	font-weight: 400;
+	color: rgba(5, 16, 52, 0.65);
+	letter-spacing: 0.02em;
+}
+
+.volunteer-section-card .section-subtitle span {
+	font-size: 1rem;
+}
+
 .education-section-div h1 {
 	font-weight: 300;
 	margin-right: 100px;

@@ -743,11 +743,14 @@ export default function App() {
         </div>
       </div>
 
-      <div className="section-card">
+      <div className="section-card volunteer-section-card">
         <div className="titles" id="volunteerSection">
           <h1 className="separator" style={{ fontWeight: 400 }}>
             VOLUNTEER &amp; INTERNSHIP
           </h1>
+          <p className="section-subtitle">
+            <span aria-hidden="true">🤝</span> Community impact &amp; hands-on learning
+          </p>
         </div>
         <div className="work-section-div">
           <section className="work-section">
